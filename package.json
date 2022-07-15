@@ -1,23 +1,33 @@
 {
   "name": "vscode-h5web",
   "displayName": "H5Web",
-  "publisher": "H5Web",
+  "publisher": "ESRF",
   "description": "Visualize HDF5 files in VSCode",
   "version": "0.0.1",
   "author": "European Synchrotron Radiation Facility",
   "license": "MIT",
+  "homepage": "https://h5web.panosc.eu/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/silx-kit/vscode-h5web"
+    "url": "https://github.com/silx-kit/vscode-h5web.git"
   },
+  "bugs": {
+    "url": "https://github.com/silx-kit/vscode-h5web/issues",
+    "email": "h5web@esrf.fr"
+  },
+  "icon": "./assets/favicon192.png",
+  "galleryBanner": {
+    "color": "#333333",
+    "theme": "light"
+  },
+  "categories": [
+    "Visualization"
+  ],
   "engines": {
     "node": "16.x",
     "pnpm": "7.x",
     "vscode": ">=1.34.0"
   },
-  "categories": [
-    "Visualization"
-  ],
   "activationEvents": [
     "onCustomEditor:h5web.viewer"
   ],
@@ -46,8 +56,8 @@
     "vscode:prepublish": "pnpm build"
   },
   "dependencies": {
-    "@h5web/app": "6.0.0",
-    "@h5web/h5wasm": "6.0.0",
+    "@h5web/app": "6.1.0",
+    "@h5web/h5wasm": "6.1.0",
     "@react-hookz/web": "15.0.1",
     "axios": "0.27.2",
     "normalize.css": "8.0.1",

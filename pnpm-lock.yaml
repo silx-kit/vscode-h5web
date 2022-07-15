@@ -1,8 +1,8 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@h5web/app': 6.0.0
-  '@h5web/h5wasm': 6.0.0
+  '@h5web/app': 6.1.0
+  '@h5web/h5wasm': 6.1.0
   '@react-hookz/web': 15.0.1
   '@types/node': 16.11.7
   '@types/react': 17.0.33
@@ -19,8 +19,8 @@ specifiers:
   vite: 2.9.13
 
 dependencies:
-  '@h5web/app': 6.0.0_sfoxds7t5ydpegc3knd667wn6m
-  '@h5web/h5wasm': 6.0.0_n7lgv3wsh27c7jwfgclb4wezcq
+  '@h5web/app': 6.1.0_sfoxds7t5ydpegc3knd667wn6m
+  '@h5web/h5wasm': 6.1.0_akhqohyqqom3f2ix4b7kb4ocry
   '@react-hookz/web': 15.0.1_sfoxds7t5ydpegc3knd667wn6m
   axios: 0.27.2
   normalize.css: 8.0.1
@@ -308,13 +308,13 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
-  /@h5web/app/6.0.0_sfoxds7t5ydpegc3knd667wn6m:
-    resolution: {integrity: sha512-Qsyu2YKKBvT5vJKaVT3oVNtUjJqON46wcDB+OZVTQ50qyaZc7g8sgSlq3O7XxX4xQNdIUGGjq4ASKM0Kq/TwJg==}
+  /@h5web/app/6.1.0_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-AqYID1Ek5VZWHbxik51zckyzbk/NKTVQCTL2uWbdosROPpqU6qxyRUuDQPLgtNKH/ydzXnvSnTIlRRcuX4hdSA==}
     peerDependencies:
       react: '>=16'
       react-dom: '>=16'
     dependencies:
-      '@h5web/lib': 6.0.0_kyj2kho4t6m6x5ywlgdnd3td4i
+      '@h5web/lib': 6.1.0_kyj2kho4t6m6x5ywlgdnd3td4i
       '@react-hookz/web': 14.2.2_sfoxds7t5ydpegc3knd667wn6m
       '@react-three/fiber': 7.0.26_apkfqzawxbvyaakrxvzzbm6zli
       axios: 0.27.2
@@ -338,19 +338,19 @@ packages:
       - js-cookie
     dev: false
 
-  /@h5web/h5wasm/6.0.0_n7lgv3wsh27c7jwfgclb4wezcq:
-    resolution: {integrity: sha512-1sbEYRs638bj+niITjzLxvfdwqntOI+KH9ZU8XDYbxeqeEZj3+cGXehCJRPt11V2lqWlPYcwrzSdmuivdHmczQ==}
+  /@h5web/h5wasm/6.1.0_akhqohyqqom3f2ix4b7kb4ocry:
+    resolution: {integrity: sha512-XI7ykg4xckX/aFWm8cMfIDI47DliqmgWDFOcGF+NzPfcmJYKaZPqKOmsUCws9iThO0NI/0e/B37qvnq8YWdFPg==}
     peerDependencies:
-      '@h5web/app': 6.0.0
+      '@h5web/app': 6.1.0
       react: '>=16'
     dependencies:
-      '@h5web/app': 6.0.0_sfoxds7t5ydpegc3knd667wn6m
+      '@h5web/app': 6.1.0_sfoxds7t5ydpegc3knd667wn6m
       h5wasm: 0.4.4
       react: 17.0.2
     dev: false
 
-  /@h5web/lib/6.0.0_kyj2kho4t6m6x5ywlgdnd3td4i:
-    resolution: {integrity: sha512-dcPCaxTY7crLQMnIM6TzEqhM+ImWUoa+ahdIAdcv7rvWk8iTlv5WuJJoOam0HtXAd/IYv6IVmvAdI+oMAC4gCA==}
+  /@h5web/lib/6.1.0_kyj2kho4t6m6x5ywlgdnd3td4i:
+    resolution: {integrity: sha512-fmUYMkyOVzWxLtrMY9eP/mqzdfD4Shafs4Q2aDtlEx1fZ9pZTIAX5XYFZdOJa5xEloHB1Pm02QWPRt35/w2rJg==}
     peerDependencies:
       '@react-three/fiber': '>=6.0.14'
       react: '>=16'
