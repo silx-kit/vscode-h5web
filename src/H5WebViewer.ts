@@ -18,8 +18,7 @@ export default class H5WebViewer
 
   public async openCustomDocument(
     uri: Uri,
-    openContext: CustomDocumentOpenContext,
-    token: CancellationToken
+    openContext: CustomDocumentOpenContext
   ): Promise<HDF5Document> {
     const { backupId } = openContext;
     const fileUri = typeof backupId === 'string' ? Uri.parse(backupId) : uri;
@@ -30,8 +29,7 @@ export default class H5WebViewer
 
   public async resolveCustomEditor(
     document: HDF5Document,
-    webviewPanel: WebviewPanel,
-    token: CancellationToken
+    webviewPanel: WebviewPanel
   ): Promise<void> {
     const { webview } = webviewPanel;
     webview.options = { enableScripts: true };

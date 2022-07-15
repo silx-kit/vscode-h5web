@@ -1,8 +1,8 @@
 {
   "name": "vscode-h5web",
   "displayName": "H5Web",
-  "publisher": "ESRF",
-  "description": "Visualize HDF5 files in VSCode",
+  "publisher": "h5web",
+  "description": "Visualize HDF5 files in VS Code",
   "version": "0.0.1",
   "author": "European Synchrotron Radiation Facility",
   "license": "MIT",
@@ -15,10 +15,10 @@
     "url": "https://github.com/silx-kit/vscode-h5web/issues",
     "email": "h5web@esrf.fr"
   },
-  "icon": "./assets/favicon192.png",
+  "icon": "assets/favicon192.png",
   "galleryBanner": {
     "color": "#333333",
-    "theme": "light"
+    "theme": "dark"
   },
   "categories": [
     "Visualization"
@@ -26,7 +26,7 @@
   "engines": {
     "node": "16.x",
     "pnpm": "7.x",
-    "vscode": ">=1.34.0"
+    "vscode": ">=1.46.0"
   },
   "activationEvents": [
     "onCustomEditor:h5web.viewer"
@@ -45,15 +45,15 @@
       }
     ]
   },
-  "main": "./out/extension.js",
+  "main": "./out/main.js",
   "scripts": {
-    "prewatch": "pnpm build:app",
-    "watch": "tsc --project ./src --watch",
-    "build": "pnpm build:app && pnpm build:extension",
+    "build": "pnpm build:app && pnpm build:extension --minify",
     "build:app": "vite build",
-    "build:extension": "tsc --project ./src",
+    "build:extension": "esbuild ./src/extension.ts --bundle --outfile=out/main.js --external:vscode --format=cjs --platform=node",
+    "watch": "pnpm build:extension --sourcemap --watch",
     "prettier": "prettier . --cache --check",
-    "vscode:prepublish": "pnpm build"
+    "vscode:prepublish": "pnpm build",
+    "pub": "pnpx vsce publish --no-dependencies"
   },
   "dependencies": {
     "@h5web/app": "6.1.0",
@@ -69,8 +69,9 @@
     "@types/node": "16.11.7",
     "@types/react": "17.0.33",
     "@types/react-dom": "17.0.10",
-    "@types/vscode": "1.68.1",
+    "@types/vscode": "1.46.0",
     "@vitejs/plugin-react": "1.3.2",
+    "esbuild": "0.14.49",
     "prettier": "2.7.1",
     "typescript": "4.7.3",
     "vite": "2.9.13"

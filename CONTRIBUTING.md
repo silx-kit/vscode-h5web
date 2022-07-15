@@ -39,30 +39,31 @@ Code window where the extension is running with <kbd>Ctrl+R</kbd>.
 
 ## Publishing
 
-Publishing is done with the `vsce` CLI. you can install it globally with
-`pnpm add -g vsce`.
-
-To
-[publish the extension](https://code.visualstudio.com/api/working-with-extensions/publishing-extension)
-on the Visual Studio Marketplace, you must first have access, with the same
-Microsoft account, to both the
-[**ESRF** publisher account](https://marketplace.visualstudio.com/manage/publishers/esrf)
+To be allowed to
+[publish an extension](https://code.visualstudio.com/api/working-with-extensions/publishing-extension)
+to the Visual Studio Marketplace you must have access to both the
+[**H5Web** publisher account](https://marketplace.visualstudio.com/manage/publishers/h5web)
 on the Marketplace and the
-[**H5Web** organisation](https://dev.azure.com/H5Web/) on Azure DevOps.
+[**H5Web** organisation](https://dev.azure.com/H5Web/) on Azure DevOps, with the
+same Microsoft account.
 
-Then, you can
+Then, you have to
 [generate a Personal Access Token](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#get-a-personal-access-token)
-on Azure DevOps and use it to login to the publisher account:
+on Azure DevOps. You will be asked for this token when publishing. At this
+point, you may want to test that you can log in to the publisher account:
 
 ```bash
-vsce login ESRF
+pnpx vsce login ESRF
 ```
 
 If you are able to login, then you're ready to publish the extension:
 
 ```bash
-vsce publish <patch|minor|major|x.y.z>
+pnpm pub <patch|minor|major|x.y.z>
 ```
 
 This will build the front-end app and the extension, bump the version in
 `package.json` and publish the extension to the Marketplace.
+
+> Note that `pnpm publish`, is a reserved command for publishing to the NPM
+> repository.
