@@ -1,4 +1,4 @@
-import { Suspense, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { useEventListener } from '@react-hookz/web';
 import { FileInfo, Message } from './models';
 import { isFileInfoMessage } from './utils';
@@ -13,6 +13,11 @@ function App() {
       setFileInfo(message.data);
     }
   });
+
+  useEffect(() => {
+    const vscode = acquireVsCodeApi();
+    vscode.postMessage({ type: 'ready' });
+  }, []);
 
   if (!fileInfo) {
     return null;
