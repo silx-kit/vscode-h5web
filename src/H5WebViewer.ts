@@ -32,7 +32,19 @@ export default class H5WebViewer
     webviewPanel: WebviewPanel
   ): Promise<void> {
     const { webview } = webviewPanel;
-    webview.options = { enableScripts: true };
+
+    // Allow opening files outside of workspace
+    // https://github.com/ucodkr/vscode-tiff/blob/master/src/tiffPreview.ts#L27-L30
+    const extensionRoot = Uri.file(this.context.extensionPath);
+    const resourceRoot = document.uri.with({
+      path: document.uri.path.replace(/\/[^/]+?\.\w+$/, '/'),
+    });
+
+    webview.options = {
+      enableScripts: true,
+      localResourceRoots: [resourceRoot, extensionRoot],
+    };
+
     webview.html = await this.getHtmlForWebview(webview);
 
     webview.onDidReceiveMessage((evt) => {
