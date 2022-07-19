@@ -34,7 +34,7 @@ export default class H5WebViewer
     const { webview } = webviewPanel;
 
     // Allow opening files outside of workspace
-    // https://github.com/ucodkr/vscode-tiff/blob/master/src/tiffPreview.ts#L27-L30
+    // https://github.com/ucodkr/vscode-tiff/blob/9a4f976584fcba24e9f25680fcdb47fc8f97493f/src/tiffPreview.ts#L27-L30
     const extensionRoot = Uri.file(this.context.extensionPath);
     const resourceRoot = document.uri.with({
       path: document.uri.path.replace(/\/[^/]+?\.\w+$/, '/'),
