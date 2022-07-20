@@ -5,6 +5,17 @@ Explore and visualise **HDF5 files** directly in Visual Studio Code with
 
 ![GIF recording](./assets/vscode-h5web.gif)
 
+## Supported file extensions
+
+This VS Code extension relies on filename extensions to identify HDF5 files. It
+currently supports the following: `.h5`, `.hdf`, `.hdf5`, `.nx`
+([NeXus](https://manual.nexusformat.org/index.html)), `.nxs`, `.nx5`, `.nexus`,
+`.cxi`
+([Coherent X-ray Imaging](https://raw.githubusercontent.com/cxidb/CXI/master/cxi_file_format.pdf)),
+`.nc` ([netCDF](https://docs.unidata.ucar.edu/nug/current/)). If you'd like to
+add another, don't hesitate to
+[open an issue](https://github.com/silx-kit/vscode-h5web/issues/new).
+
 ## Known limitations
 
 This extension uses [h5wasm](https://github.com/usnistgov/h5wasm) to read HDF5
