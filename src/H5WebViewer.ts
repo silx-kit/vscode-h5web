@@ -1,34 +1,24 @@
 import {
-  CancellationToken,
-  CustomDocumentOpenContext,
+  CustomDocument,
   CustomReadonlyEditorProvider,
   ExtensionContext,
   Uri,
   Webview,
   WebviewPanel,
-  workspace,
 } from 'vscode';
-import HDF5Document from './HDF5Document';
 import { join, basename } from 'path';
 
 export default class H5WebViewer
-  implements CustomReadonlyEditorProvider<HDF5Document>
+  implements CustomReadonlyEditorProvider<CustomDocument>
 {
   public constructor(private readonly context: ExtensionContext) {}
 
-  public async openCustomDocument(
-    uri: Uri,
-    openContext: CustomDocumentOpenContext
-  ): Promise<HDF5Document> {
-    const { backupId } = openContext;
-    const fileUri = typeof backupId === 'string' ? Uri.parse(backupId) : uri;
-
-    const buffer = await workspace.fs.readFile(fileUri);
-    return new HDF5Document(uri, buffer);
+  public async openCustomDocument(uri: Uri): Promise<CustomDocument> {
+    return { uri, dispose: () => {} };
   }
 
   public async resolveCustomEditor(
-    document: HDF5Document,
+    document: CustomDocument,
     webviewPanel: WebviewPanel
   ): Promise<void> {
     const { webview } = webviewPanel;
