@@ -42,6 +42,16 @@
           }
         ],
         "priority": "default"
+      },
+      {
+        "viewType": "h5web.fallback-viewer",
+        "displayName": "H5Web (any extension)",
+        "selector": [
+          {
+            "filenamePattern": "*.*"
+          }
+        ],
+        "priority": "option"
       }
     ]
   },

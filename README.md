@@ -16,6 +16,12 @@ currently supports the following: `.h5`, `.hdf`, `.hdf5`, `.nx`
 add another, don't hesitate to
 [open an issue](https://github.com/silx-kit/vscode-h5web/issues/new).
 
+Alternatively, you can still open any file in H5Web by right-clicking on it and
+choosing **Open with...**. If you've already opened the file, you can also
+invoke the **View: Reopen Editor With...** command:
+
+![GIF recording](./assets/vscode-openwith.gif)
+
 ## Known limitations
 
 This extension uses [h5wasm](https://github.com/usnistgov/h5wasm) to read HDF5
