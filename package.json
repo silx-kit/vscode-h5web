@@ -48,7 +48,7 @@
         "displayName": "H5Web (any extension)",
         "selector": [
           {
-            "filenamePattern": "*.*"
+            "filenamePattern": "*"
           }
         ],
         "priority": "option"
