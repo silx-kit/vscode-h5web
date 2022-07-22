@@ -5,20 +5,30 @@ Explore and visualise **HDF5 files** directly in Visual Studio Code with
 
 ![GIF recording](./assets/vscode-h5web.gif)
 
-## Supported file extensions
+## Supported HDF5 file extensions
 
 This VS Code extension relies on filename extensions to identify HDF5 files. It
-currently supports the following: `.h5`, `.hdf`, `.hdf5`, `.nx`
-([NeXus](https://manual.nexusformat.org/index.html)), `.nxs`, `.nx5`, `.nexus`,
-`.cxi`
+currently supports the following extensions out of the box: `.h5`, `.hdf`,
+`.hdf5`, `.nx` ([NeXus](https://manual.nexusformat.org/index.html)), `.nxs`,
+`.nx5`, `.nexus`, `.cxi`
 ([Coherent X-ray Imaging](https://raw.githubusercontent.com/cxidb/CXI/master/cxi_file_format.pdf)),
-`.nc` ([netCDF](https://docs.unidata.ucar.edu/nug/current/)). If you'd like to
-add another, don't hesitate to
-[open an issue](https://github.com/silx-kit/vscode-h5web/issues/new).
+`.nc` ([netCDF](https://docs.unidata.ucar.edu/nug/current/)). To add support for
+more extensions, don't hesitate to
+[open an issue](https://github.com/silx-kit/vscode-h5web/issues/new) or
+[a pull request](https://github.com/silx-kit/vscode-h5web/pulls).
 
-Alternatively, you can still open any file in H5Web by right-clicking on it and
-choosing **Open with...**. If you've already opened the file, you can also
-invoke the **View: Reopen Editor With...** command:
+Alternatively, you can use VS Code's `workbench.editorAssociations` setting to
+set H5Web as the default editor for additional extensions:
+
+```json
+"workbench.editorAssociations": {
+  "*.foo": "h5web.viewer",
+},
+```
+
+Finally, you can open any file in H5Web with **right click -> Open with... ->
+H5Web (any extension)**, or, if you've already opened the file, by invoking
+**View: Reopen Editor With...** from the command palette:
 
 ![GIF recording](./assets/vscode-openwith.gif)
 
