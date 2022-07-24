@@ -14,7 +14,7 @@ currently supports the following extensions out of the box: `.h5`, `.hdf`,
 ([Coherent X-ray Imaging](https://raw.githubusercontent.com/cxidb/CXI/master/cxi_file_format.pdf)),
 `.nc` ([netCDF4](https://docs.unidata.ucar.edu/nug/current/)), `.nc4`.
 Note that formats implied but **not** based on HDF5, such as `.nc` ==> netCDF3,
-are **not** currently supported in VS Code.
+are **not** currently supported in H5Web.
 
 To add support for more extensions, don't hesitate to
 [open an issue](https://github.com/silx-kit/vscode-h5web/issues/new) or
