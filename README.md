@@ -7,21 +7,18 @@ Explore and visualise **HDF5 files** directly in Visual Studio Code with
 
 ## Supported HDF5 file extensions
 
-This VS Code extension relies on filename extensions to identify HDF5 files. It
-currently supports the following extensions out of the box: `.h5`, `.hdf`,
-`.hdf5`, `.nx` ([NeXus](https://manual.nexusformat.org/index.html)), `.nxs`,
-`.nx5`, `.nexus`, `.cxi`
+Out of the box, the H5Web viewer is configured as the default editor for the
+following file extensions: `.h5`, `.hdf`, `.hdf5`, `.nx`
+([NeXus](https://manual.nexusformat.org/index.html)), `.nxs`, `.nx5`, `.nexus`,
+`.cxi`
 ([Coherent X-ray Imaging](https://raw.githubusercontent.com/cxidb/CXI/master/cxi_file_format.pdf)),
 `.nc` ([netCDF4](https://docs.unidata.ucar.edu/nug/current/)), `.nc4`.
-Note that formats implied but **not** based on HDF5, such as `.nc` ==> netCDF3,
-are **not** currently supported in H5Web.
 
-To add support for more extensions, don't hesitate to
+To add more extensions, don't hesitate to
 [open an issue](https://github.com/silx-kit/vscode-h5web/issues/new) or
-[a pull request](https://github.com/silx-kit/vscode-h5web/pulls).
-
-Alternatively, you can use VS Code's `workbench.editorAssociations` setting to
-set H5Web as the default editor for additional extensions:
+[a pull request](https://github.com/silx-kit/vscode-h5web/pulls). Alternatively,
+you can use VS Code's `workbench.editorAssociations` setting to set H5Web as the
+default editor for additional extensions:
 
 ```json
 "workbench.editorAssociations": {
@@ -29,11 +26,24 @@ set H5Web as the default editor for additional extensions:
 },
 ```
 
-Finally, you can open any file in H5Web with **right click -> Open with... ->
-H5Web (any extension)**, or, if you've already opened the file, by invoking
-**View: Reopen Editor With...** from the command palette:
+You can also open any file in H5Web with **right click -> Open with... -> H5Web
+(any extension)**, or, if you've already opened the file, by invoking **View:
+Reopen Editor With...** from the command palette:
 
 ![GIF recording](./assets/vscode-openwith.gif)
+
+Note that some of the extensions configured to open with H5Web are not
+guaranteed to map to HDF5 files. For instance, the `.nc` extension is also used
+for netCDF3 files, which are **not** based on HDF5 and are therefore not
+compatible with H5Web. If this is an issue, you can use the
+`workbench.editorAssociations` to restore the default editor association as
+follows:
+
+```json
+"workbench.editorAssociations": {
+  "*.nc": "default",
+},
+```
 
 ## Known limitations
 
