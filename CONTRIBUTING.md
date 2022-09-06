@@ -53,10 +53,14 @@ on Azure DevOps. You will be asked for this token when publishing. At this
 point, you may want to test that you can log in to the publisher account:
 
 ```bash
-pnpx vsce login ESRF
+pnpx vsce login h5web
 ```
 
-If you are able to login, then you're ready to publish the extension:
+If you are able to login, then you're ready to publish the extension to the
+Visual Studio Marketplace.
+
+Remember to update the `CHANGELOG` and commit/push all changes before
+proceeding. Then, run the following command to publish the extension:
 
 ```bash
 pnpm pub <patch|minor|major|x.y.z>
@@ -65,5 +69,14 @@ pnpm pub <patch|minor|major|x.y.z>
 This will build the front-end app and the extension, bump the version in
 `package.json` and publish the extension to the Marketplace.
 
-> Note that `pnpm publish`, is a reserved command for publishing to the NPM
-> repository.
+> Do not use the `pnpm publish` command, as this is a reserved command for
+> publishing packages to the NPM repository.
+
+It will take a few minutes before the new version appears in the Marketplace,
+and it may take a while longer before you're able to update the extension in VS
+Code.
+
+Once you're able to install the new version and confirm that it works as
+expected, tag the latest commit and
+[publish a new release](https://github.com/silx-kit/vscode-h5web/releases/) on
+GitHub to advertise it.

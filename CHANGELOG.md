@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.0.5
+
+- ✨ Bump H5Web from v6.1.0 to v6.2.1
+  - Adds support for `int64` attributes amongst other dtypes (fixes
+    [#15](https://github.com/silx-kit/vscode-h5web/issues/15))
+  - For the full list of changes, please refer to the release notes for
+    [v6.2.0](https://github.com/silx-kit/h5web/releases/tag/v6.2.0) and
+    [v6.2.1](https://github.com/silx-kit/h5web/releases/tag/v6.2.1)
+
 ## v0.0.4
 
 - 🧩 Add `.nc4` extension
