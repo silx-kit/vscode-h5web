@@ -66,8 +66,8 @@
     "pub": "pnpx vsce publish --no-dependencies"
   },
   "dependencies": {
-    "@h5web/app": "6.1.0",
-    "@h5web/h5wasm": "6.1.0",
+    "@h5web/app": "6.2.1",
+    "@h5web/h5wasm": "6.2.1",
     "@react-hookz/web": "15.0.1",
     "axios": "0.27.2",
     "normalize.css": "8.0.1",

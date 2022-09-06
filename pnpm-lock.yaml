@@ -1,8 +1,8 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@h5web/app': 6.1.0
-  '@h5web/h5wasm': 6.1.0
+  '@h5web/app': 6.2.1
+  '@h5web/h5wasm': 6.2.1
   '@react-hookz/web': 15.0.1
   '@types/node': 16.11.7
   '@types/react': 17.0.33
@@ -20,8 +20,8 @@ specifiers:
   vite: 2.9.13
 
 dependencies:
-  '@h5web/app': 6.1.0_sfoxds7t5ydpegc3knd667wn6m
-  '@h5web/h5wasm': 6.1.0_akhqohyqqom3f2ix4b7kb4ocry
+  '@h5web/app': 6.2.1_sfoxds7t5ydpegc3knd667wn6m
+  '@h5web/h5wasm': 6.2.1_zscrl4ru6ewvae7y5q6vsf2msa
   '@react-hookz/web': 15.0.1_sfoxds7t5ydpegc3knd667wn6m
   axios: 0.27.2
   normalize.css: 8.0.1
@@ -310,15 +310,15 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
-  /@h5web/app/6.1.0_sfoxds7t5ydpegc3knd667wn6m:
-    resolution: {integrity: sha512-AqYID1Ek5VZWHbxik51zckyzbk/NKTVQCTL2uWbdosROPpqU6qxyRUuDQPLgtNKH/ydzXnvSnTIlRRcuX4hdSA==}
+  /@h5web/app/6.2.1_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-j8fO43IvtfscYJjcTd/K6aRra2w/OGAVPp1Nl0tf7m84LGQEUy0/3hFMItCUYPRROtMLWoMVCip7UlLx/EtZ/Q==}
     peerDependencies:
       react: '>=16'
       react-dom: '>=16'
     dependencies:
-      '@h5web/lib': 6.1.0_kyj2kho4t6m6x5ywlgdnd3td4i
+      '@h5web/lib': 6.2.1_ec7apzrlzucnkzulcswl7v7zfu
       '@react-hookz/web': 14.2.2_sfoxds7t5ydpegc3knd667wn6m
-      '@react-three/fiber': 7.0.26_apkfqzawxbvyaakrxvzzbm6zli
+      '@react-three/fiber': 7.0.26_weaphyuqmcotibvxgot4zxypyi
       axios: 0.27.2
       d3-format: 3.1.0
       lodash: 4.17.21
@@ -332,7 +332,7 @@ packages:
       react-slider: 2.0.1_react@17.0.2
       react-suspense-fetch: 0.4.1
       react-use: 17.4.0_sfoxds7t5ydpegc3knd667wn6m
-      three: 0.135.0
+      three: 0.141.0
       zustand: 4.0.0-rc.1_react@17.0.2
     transitivePeerDependencies:
       - debug
@@ -340,27 +340,27 @@ packages:
       - js-cookie
     dev: false
 
-  /@h5web/h5wasm/6.1.0_akhqohyqqom3f2ix4b7kb4ocry:
-    resolution: {integrity: sha512-XI7ykg4xckX/aFWm8cMfIDI47DliqmgWDFOcGF+NzPfcmJYKaZPqKOmsUCws9iThO0NI/0e/B37qvnq8YWdFPg==}
+  /@h5web/h5wasm/6.2.1_zscrl4ru6ewvae7y5q6vsf2msa:
+    resolution: {integrity: sha512-uRF4V3i3yobjccSiez1oosnDG/nmMQ1wgqjNf0pSEFw4KXzpWyXNBoiBWOFDv30cW/jCpeG3wXAIztAxbOBkmw==}
     peerDependencies:
-      '@h5web/app': 6.1.0
+      '@h5web/app': 6.2.1
       react: '>=16'
     dependencies:
-      '@h5web/app': 6.1.0_sfoxds7t5ydpegc3knd667wn6m
+      '@h5web/app': 6.2.1_sfoxds7t5ydpegc3knd667wn6m
       h5wasm: 0.4.4
       react: 17.0.2
     dev: false
 
-  /@h5web/lib/6.1.0_kyj2kho4t6m6x5ywlgdnd3td4i:
-    resolution: {integrity: sha512-fmUYMkyOVzWxLtrMY9eP/mqzdfD4Shafs4Q2aDtlEx1fZ9pZTIAX5XYFZdOJa5xEloHB1Pm02QWPRt35/w2rJg==}
+  /@h5web/lib/6.2.1_ec7apzrlzucnkzulcswl7v7zfu:
+    resolution: {integrity: sha512-ZL9bytGct6o3Vf3I49HGh4XvQAhBERgN9W8a5+OE7NEX179iAmQ5fUMhC0sxrg1KUDujSM0htjV9CnsWEzDOzw==}
     peerDependencies:
       '@react-three/fiber': '>=6.0.14'
       react: '>=16'
       react-dom: '>=16'
-      three: '>=0.120'
+      three: '>=0.138'
     dependencies:
       '@react-hookz/web': 14.2.2_sfoxds7t5ydpegc3knd667wn6m
-      '@react-three/fiber': 7.0.26_apkfqzawxbvyaakrxvzzbm6zli
+      '@react-three/fiber': 7.0.26_weaphyuqmcotibvxgot4zxypyi
       '@visx/axis': 2.10.0_react@17.0.2
       '@visx/grid': 2.10.0_react@17.0.2
       '@visx/scale': 2.2.2
@@ -384,7 +384,7 @@ packages:
       react-slider: 2.0.1_react@17.0.2
       react-use: 17.4.0_sfoxds7t5ydpegc3knd667wn6m
       react-window: 1.8.7_sfoxds7t5ydpegc3knd667wn6m
-      three: 0.135.0
+      three: 0.141.0
     transitivePeerDependencies:
       - js-cookie
     dev: false
@@ -461,7 +461,7 @@ packages:
       react-dom: 17.0.2_react@17.0.2
     dev: false
 
-  /@react-three/fiber/7.0.26_apkfqzawxbvyaakrxvzzbm6zli:
+  /@react-three/fiber/7.0.26_weaphyuqmcotibvxgot4zxypyi:
     resolution: {integrity: sha512-46NBais4fQIGcMGLBbOf84lp8y/cg73jOEVmAQQJqWX6iOVeNg29jYd15LBuCW2qPD1qDRU0rOfLbMDgwr/vxQ==}
     peerDependencies:
       react: '>=17.0'
@@ -480,7 +480,7 @@ packages:
       react-use-measure: 2.1.1_sfoxds7t5ydpegc3knd667wn6m
       resize-observer-polyfill: 1.5.1
       scheduler: 0.20.2
-      three: 0.135.0
+      three: 0.141.0
       use-asset: 1.0.4_react@17.0.2
       utility-types: 3.10.0
       zustand: 3.7.2_react@17.0.2
@@ -1767,8 +1767,8 @@ packages:
     resolution: {integrity: sha512-HnA3I2sxRQe/SZgQTQgQvvA17DhfzhBJ1LfSOXZ5VUTbxGLvnAqUef84ZGNNSEbk1ZMEIDeghTHZagJ7LifAgg==}
     dev: false
 
-  /three/0.135.0:
-    resolution: {integrity: sha512-kuEpuuxRzLv0MDsXai9huCxOSQPZ4vje6y0gn80SRmQvgz6/+rI0NAvCRAw56zYaWKMGMfqKWsxF9Qa2Z9xymQ==}
+  /three/0.141.0:
+    resolution: {integrity: sha512-JaSDAPWuk4RTzG5BYRQm8YZbERUxTfTDVouWgHMisS2to4E5fotMS9F2zPFNOIJyEFTTQDDKPpsgZVThKU3pXA==}
     dev: false
 
   /throttle-debounce/3.0.1:
