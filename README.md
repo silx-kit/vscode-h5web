@@ -50,6 +50,7 @@ follows:
 This extension uses [h5wasm](https://github.com/usnistgov/h5wasm) to read HDF5
 files and therefore suffers from the following limitations:
 
+- Files bigger than 2GB cannot be read
 - External links cannot be resolved
 - Datasets compressed with external filters (such as those of
   [hdf5plugin](https://github.com/silx-kit/hdf5plugin)) cannot be read

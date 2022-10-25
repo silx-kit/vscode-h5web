@@ -5,6 +5,7 @@ import {
   Uri,
   Webview,
   WebviewPanel,
+  workspace,
 } from 'vscode';
 import { join, basename } from 'path';
 
@@ -37,13 +38,15 @@ export default class H5WebViewer
 
     webview.html = await this.getHtmlForWebview(webview);
 
-    webview.onDidReceiveMessage((evt) => {
+    webview.onDidReceiveMessage(async (evt) => {
       if (evt.type === 'ready') {
+        const { size } = await workspace.fs.stat(document.uri);
         webview.postMessage({
           type: 'FileInfo',
           data: {
             uri: webview.asWebviewUri(document.uri).toString(),
             name: basename(document.uri.fsPath),
+            size,
           },
         });
       }

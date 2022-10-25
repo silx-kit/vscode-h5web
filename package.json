@@ -66,13 +66,14 @@
     "pub": "pnpx vsce publish --no-dependencies"
   },
   "dependencies": {
-    "@h5web/app": "6.2.1",
-    "@h5web/h5wasm": "6.2.1",
+    "@h5web/app": "6.4.1",
+    "@h5web/h5wasm": "6.4.1",
     "@react-hookz/web": "15.0.1",
     "axios": "0.27.2",
     "normalize.css": "8.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-error-boundary": "3.1.4",
     "suspend-react": "0.0.8"
   },
   "devDependencies": {
