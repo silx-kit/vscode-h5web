@@ -3,6 +3,7 @@ import { useEventListener } from '@react-hookz/web';
 import { FileInfo, Message } from './models';
 import { isFileInfoMessage } from './utils';
 import Viewer from './Viewer';
+import { ErrorBoundary } from 'react-error-boundary';
 
 function App() {
   const [fileInfo, setFileInfo] = useState<FileInfo>();
@@ -24,9 +25,11 @@ function App() {
   }
 
   return (
-    <Suspense fallback={<></>}>
-      <Viewer fileInfo={fileInfo} />
-    </Suspense>
+    <ErrorBoundary fallbackRender={({ error }) => <p>{error.message}</p>}>
+      <Suspense fallback={<>Loading...</>}>
+        <Viewer fileInfo={fileInfo} />
+      </Suspense>
+    </ErrorBoundary>
   );
 }
 
