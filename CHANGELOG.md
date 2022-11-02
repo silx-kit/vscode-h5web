@@ -1,5 +1,26 @@
 # Changelog
 
+## v0.0.6
+
+- 🔄 Show loading message while opening large file
+  [#16](https://github.com/silx-kit/vscode-h5web/pull/16)
+- 🚩 Show error when trying to open file bigger than 2 GB
+  [#16](https://github.com/silx-kit/vscode-h5web/pull/16)
+- ✨ Bump H5Web from v6.2.1 to 6.5.0
+  - Compression filters are now listed when inspecting a dataset
+  - Visualizing a dataset compressed with external filters now brings out an
+    explicit error in the UI
+  - Explorer can be navigated with the keyboard's arrow keys
+  - NeXus visualizations "NX Spectrum" and "NX Image" are renamed "NX Line" and
+    "NX Heatmap" respectively
+  - Tick labels should no longer appear underneath the ordinate axis' label
+  - Selecting datatypes no longer brings out an error in the UI
+  - For the full list of changes, please refer to the release notes for
+    [v6.3.0](https://github.com/silx-kit/h5web/releases/tag/v6.3.0),
+    [v6.4.0](https://github.com/silx-kit/h5web/releases/tag/v6.4.0),
+    [v6.4.1](https://github.com/silx-kit/h5web/releases/tag/v6.4.1) and
+    [v6.5.0](https://github.com/silx-kit/h5web/releases/tag/v6.5.0)
+
 ## v0.0.5
 
 - ✨ Bump H5Web from v6.1.0 to v6.2.1
