@@ -1,5 +1,24 @@
 # Changelog
 
+## v0.0.7
+
+- ✨ Bump H5Web from v6.5.0 to v7.0.0
+  - Support stacks of RGB images
+  - Support NeXus RGB visualizations with custom axis datasets
+  - Fix detection of RGB datasets inside `NXdata` groups
+  - In the heatmap toolbar, selecting a colormap range smaller than the data
+    domain no longer reduces the slider's extent (and therefore keeps the thumbs
+    where you drop them)
+  - Select-to-zoom interactions now zoom only on areas of at least 20x20px,
+    which avoids inadvertently zooming on very small areas
+  - Fix error when switching from "NX Heatmap" to "NX Line" visualization with
+    an axis dataset longer than the signal dataset by one value (i.e. pixel
+    boundaries)
+  - For the full list of changes, please refer to the release notes for
+    [v6.6.0](https://github.com/silx-kit/h5web/releases/tag/v6.6.0),
+    [v6.6.1](https://github.com/silx-kit/h5web/releases/tag/v6.6.1) and
+    [v7.0.0](https://github.com/silx-kit/h5web/releases/tag/v7.0.0)
+
 ## v0.0.6
 
 - 🔄 Show loading message while opening large file
