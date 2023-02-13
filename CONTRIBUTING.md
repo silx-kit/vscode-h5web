@@ -13,7 +13,9 @@ pnpm watch
 - `pnpm watch` compiles the extension code with `tsc` in watch mode.
 
 Once watch mode is running, press <kbd>F5</kbd> to **run the extension in debug
-mode** in a new VS Code window.
+mode** in a new VS Code window. If this doesn't work, check that the
+[_JavaScript Debugger_](https://marketplace.visualstudio.com/items?itemName=ms-vscode.js-debug)
+extension is enabled.
 
 Whenever you change the code of the front-end app, run `pnpm build:app` again in
 a separate terminal, wait for Vite to finish building the app, and reload the VS
@@ -49,18 +51,17 @@ same Microsoft account.
 
 Then, you have to
 [generate a Personal Access Token](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#get-a-personal-access-token)
-on Azure DevOps. You will be asked for this token when publishing. At this
-point, you may want to test that you can log in to the publisher account:
+(PAT) on Azure DevOps. Then, use the `vsce` CLI and your PAT to add `h5web` to
+the list of known publishers on your machine:
 
 ```bash
 pnpx vsce login h5web
 ```
 
-If you are able to login, then you're ready to publish the extension to the
-Visual Studio Marketplace.
+You're now ready to publish the extension to the Visual Studio Marketplace.
 
-Remember to update the `CHANGELOG` and commit/push all changes before
-proceeding. Then, run the following command to publish the extension:
+Before doing so, remember to update the `CHANGELOG` and commit/push all changes.
+Then, run the following command to publish the extension:
 
 ```bash
 pnpm pub <patch|minor|major|x.y.z>
