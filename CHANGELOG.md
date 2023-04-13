@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.0.8
+
+- ✨ Bump H5Web from v7.0.0 to v7.1.0
+  - Allow searching for datasets, groups and other entities by text in the
+    sidebar.
+  - Support NetCDF's `_FillValue` attribute to ignore missing data. When the
+    attribute is set, the given value is ignored when computing the data domain
+    and when rendering the line and heatmap visualizations.
+  - Support unsigned 64-bit integers.
+  - On heatmap visualizations, `+Infinity` and `-Infinity` no longer appear as
+    transparent; they are now displayed with the lowest/highest colors of the
+    selected color map just like any other under/over values.
+  - For the full list of changes, please refer to the release notes for
+    [v7.0.1](https://github.com/silx-kit/h5web/releases/tag/v7.0.1) and
+    [v7.1.0](https://github.com/silx-kit/h5web/releases/tag/v7.1.0)
+
 ## v0.0.7
 
 - ✨ Bump H5Web from v6.5.0 to v7.0.0
