@@ -24,7 +24,7 @@
     "Visualization"
   ],
   "engines": {
-    "node": "16.x",
+    "node": "18.x",
     "pnpm": "7.x",
     "vscode": ">=1.46.0"
   },
@@ -66,8 +66,8 @@
     "pub": "pnpx vsce publish --no-dependencies"
   },
   "dependencies": {
-    "@h5web/app": "7.0.0",
-    "@h5web/h5wasm": "7.0.0",
+    "@h5web/app": "7.1.0",
+    "@h5web/h5wasm": "7.1.0",
     "@react-hookz/web": "15.0.1",
     "axios": "0.27.2",
     "normalize.css": "8.0.1",
@@ -77,13 +77,13 @@
     "suspend-react": "0.0.8"
   },
   "devDependencies": {
-    "@types/node": "16.11.7",
-    "@types/react": "17.0.33",
-    "@types/react-dom": "17.0.10",
-    "@types/vscode": "1.46.0",
+    "@types/node": "^18.15.11",
+    "@types/react": "^17.0.58",
+    "@types/react-dom": "^17.0.19",
+    "@types/vscode": "~1.46.0",
     "@vitejs/plugin-react": "1.3.2",
     "esbuild": "0.14.49",
-    "prettier": "2.7.1",
+    "prettier": "2.8.7",
     "typescript": "4.7.3",
     "vite": "2.9.13"
   }

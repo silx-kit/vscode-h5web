@@ -1,0 +1,74 @@
+name: Lint & Build
+
+on:
+  pull_request: # for PRs from forks
+  push: # to start jobs asap when pushing a branch to open a PR
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    # Skip `pull_request` runs on local PRs for which `push` runs are already triggered
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository
+
+    steps:
+      - name: Checkout 🏷️
+        uses: actions/checkout@v3
+
+      - name: Set up Node 🕹️
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: 'package.json'
+
+      - name: Install pnpm ⚙️
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7.x
+
+      - name: Restore cache 📌
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/setup-pnpm/node_modules/.bin/store
+          key: cache-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
+
+      - name: Install dependencies ⚙️
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint 🤓
+        run: pnpm prettier
+
+  build:
+    runs-on: ubuntu-latest
+    # Skip `pull_request` runs on local PRs for which `push` runs are already triggered
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository
+
+    steps:
+      - name: Checkout 🏷️
+        uses: actions/checkout@v3
+
+      - name: Set up Node 🕹️
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: 'package.json'
+
+      - name: Install pnpm ⚙️
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7.x
+
+      - name: Restore cache 📌
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/setup-pnpm/node_modules/.bin/store
+          key: cache-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
+
+      - name: Install dependencies ⚙️
+        run: pnpm install --frozen-lockfile
+
+      - name: Build 👓
+        run: pnpm build
