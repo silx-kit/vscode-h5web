@@ -78,6 +78,6 @@ and it may take a while longer before you're able to update the extension in VS
 Code.
 
 Once you're able to install the new version and confirm that it works as
-expected, tag the latest commit and
+expected, push the tag created by the `pnpm pub` command, and
 [publish a new release](https://github.com/silx-kit/vscode-h5web/releases/) on
 GitHub to advertise it.
