@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.0.9
+
+- ✨ Bump H5Web from v7.1.0 to v8.0.0
+  - Show NeXus axis labels when hovering dimension buttons D0, D1, ...
+  - Add Cubehelix colormap for heatmap visualization
+  - Display chunks information, if any, when inspecting a dataset
+  - Fix support for big-endian numbers
+  - For the full list of changes, please refer to the release notes for
+    [v8.0.0](https://github.com/silx-kit/h5web/releases/tag/v8.0.0)
+
 ## v0.0.8
 
 - ✨ Bump H5Web from v7.0.0 to v7.1.0
