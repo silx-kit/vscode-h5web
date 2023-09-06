@@ -5,9 +5,13 @@ import {
   Uri,
   Webview,
   WebviewPanel,
+  window,
   workspace,
 } from 'vscode';
 import { join, basename } from 'path';
+import { writeFileSync } from 'fs';
+import { Message, MessageType } from './models';
+import path = require('path');
 
 export default class H5WebViewer
   implements CustomReadonlyEditorProvider<CustomDocument>
@@ -38,17 +42,39 @@ export default class H5WebViewer
 
     webview.html = await this.getHtmlForWebview(webview);
 
-    webview.onDidReceiveMessage(async (evt) => {
-      if (evt.type === 'ready') {
+    webview.onDidReceiveMessage(async (evt: Message) => {
+      if (evt.type === MessageType.Ready) {
         const { size } = await workspace.fs.stat(document.uri);
+
         webview.postMessage({
-          type: 'FileInfo',
+          type: MessageType.FileInfo,
           data: {
             uri: webview.asWebviewUri(document.uri).toString(),
             name: basename(document.uri.fsPath),
             size,
           },
         });
+
+        return;
+      }
+
+      if (evt.type === MessageType.Export) {
+        const { format, name, payload } = evt.data;
+
+        const defaultUri = Uri.file(
+          path.join(path.dirname(document.uri.fsPath), `${name}.${format}`)
+        );
+
+        const saveUri = await window.showSaveDialog({
+          defaultUri,
+          title: `Export to ${format.toUpperCase()}`,
+        });
+
+        if (saveUri) {
+          writeFileSync(saveUri.fsPath, payload);
+        }
+
+        return;
       }
     });
   }

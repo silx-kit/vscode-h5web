@@ -1,8 +1,8 @@
 import { App } from '@h5web/app';
 import { H5WasmProvider } from '@h5web/h5wasm';
-import { FileInfo } from './models';
 import { suspend } from 'suspend-react';
-import { MAX_SIZE_IN_BYTES } from './utils';
+import { MAX_SIZE_IN_BYTES, getExportURL } from './utils';
+import { type FileInfo } from '../src/models.js';
 
 interface Props {
   fileInfo: FileInfo;
@@ -23,7 +23,11 @@ function Viewer(props: Props) {
   }, [fileInfo]);
 
   return (
-    <H5WasmProvider filename={fileInfo.name} buffer={buffer}>
+    <H5WasmProvider
+      filename={fileInfo.name}
+      buffer={buffer}
+      getExportURL={getExportURL}
+    >
       <App />
     </H5WasmProvider>
   );
