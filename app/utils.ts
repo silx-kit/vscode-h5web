@@ -11,74 +11,46 @@ export const getExportURL: GetExportURL = (
   selection,
   value
 ) => {
+  function doExport(payload: string): Blob {
+    // Send payload to `H5WebViewer` editor provider
+    vscode.postMessage({
+      type: MessageType.Export,
+      data: { format, name: dataset.name, payload },
+    });
+
+    return new Blob(); // doesn't matter as long as it's not falsy
+  }
+
   if (format === 'json') {
-    return async () => {
-      vscode.postMessage({
-        type: MessageType.Export,
-        data: {
-          format,
-          name: dataset.name,
-          payload: JSON.stringify(value, null, 2),
-        },
-      });
-      return new Blob(); // doesn't matter as long as it's not falsy
-    };
+    return async () => doExport(JSON.stringify(value, null, 2));
   }
 
   if (format === 'csv') {
-    // Async function that will be called when the user clicks on a `CSV` export menu entry
     return async () => {
-      // Generate CSV string from `value` array
+      // Find dimensions of dataset/slice to export
+      // Note that there is currently no way to know if the dataset/slice is transposed - https://github.com/silx-kit/h5web/issues/1454
+      const dims = selection
+        ? dataset.shape.filter((_, index) => selection[index * 2] === ':')
+        : dataset.shape;
+
+      if (dims.length < 1 || dims.length > 2) {
+        throw new Error(
+          'Expected dataset/slice to export to have 1 or 2 dimensions'
+        );
+      }
+
       let csv = '';
-      let dims = [];
+      const [rows, cols = 1] = dims; // export 1D dataset/slice as column (i.e. 1 value per line)
 
-      // Record all dataset dimensions with cardinality greater than one,
-      // accounting for subset selection if applicable
-      if (selection) {
-        let subsets = selection.split(',');
-        for (let i = 0; i < subsets.length; i++) {
-          // Because of the user interface, all slices will either be
-          // the full array length or a single value
-          if (subsets[i] === ':' && dataset.shape[i] > 1) {
-            dims.push(dataset.shape[i]);
-          }
+      for (let i = 0; i < rows; i += 1) {
+        for (let j = 0; j < cols; j += 1) {
+          csv += `${value[i * cols + j].toString()}${j < cols - 1 ? ',' : ''}`;
         }
-      } else {
-        dataset.shape.forEach((val) => {
-          if (val > 1) dims.push(val);
-        });
+
+        csv += i < rows - 1 ? '\n' : '';
       }
 
-      // Only provide special handling for 2D dataset outputs
-      if (dims.length == 2) {
-        let k = 0;
-        for (let i = 0; i < dims[0]; i++) {
-          for (let j = 0; j < dims[1] - 1; j++) {
-            csv += `${value[k].toString()}, `;
-            k++;
-          }
-
-          csv += `${value[k].toString()}\n`;
-          k++;
-        }
-      } else {
-        value.forEach((val: any) => {
-          csv += `${val.toString()}\n`;
-        });
-      }
-
-      const finalCsv = csv.slice(0, -1);
-
-      vscode.postMessage({
-        type: MessageType.Export,
-        data: {
-          format,
-          name: dataset.name,
-          payload: finalCsv,
-        },
-      });
-
-      return new Blob(); // doesn't matter as long as it's not falsy
+      return doExport(csv);
     };
   }
 
