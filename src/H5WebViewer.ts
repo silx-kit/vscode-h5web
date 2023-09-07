@@ -9,7 +9,7 @@ import {
   workspace,
 } from 'vscode';
 import { join, basename } from 'path';
-import { writeFileSync } from 'fs';
+import { writeFileSync, watchFile, unwatchFile } from 'fs';
 import { Message, MessageType } from './models';
 import path = require('path');
 
@@ -44,15 +44,25 @@ export default class H5WebViewer
 
     webview.onDidReceiveMessage(async (evt: Message) => {
       if (evt.type === MessageType.Ready) {
+        const uri = webview.asWebviewUri(document.uri).toString();
+        const name = basename(document.uri.fsPath);
         const { size } = await workspace.fs.stat(document.uri);
 
         webview.postMessage({
           type: MessageType.FileInfo,
-          data: {
-            uri: webview.asWebviewUri(document.uri).toString(),
-            name: basename(document.uri.fsPath),
-            size,
-          },
+          data: { uri, name, size },
+        });
+
+        function watcher() {
+          webview.postMessage({
+            type: MessageType.FileInfo,
+            data: { uri, name, size },
+          });
+        }
+
+        watchFile(document.uri.fsPath, watcher);
+        webviewPanel.onDidDispose(() => {
+          unwatchFile(document.uri.fsPath, watcher);
         });
 
         return;
