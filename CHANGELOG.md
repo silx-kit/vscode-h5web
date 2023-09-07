@@ -1,5 +1,23 @@
 # Changelog
 
+## v0.0.10
+
+- ✨ Rerender automatically on file changes
+  [#31](https://github.com/silx-kit/vscode-h5web/pull/31)
+- ✨ `< Matrix, Line >` Support exporting dataset/slice to CSV —
+  [#23](https://github.com/silx-kit/vscode-h5web/pull/23) by @mandrew9
+- ✨ `< Raw >` Support exporting dataset to JSON
+  [#29](https://github.com/silx-kit/vscode-h5web/pull/29)
+- ✨ Bump H5Web from v8.0.0 to v9.0.0
+  - Allow zooming on very thin selection boxes
+  - Fix heatmap snapshot feature and, more generally, fix saving WebGL canvas as
+    image via "save image as"
+  - Parse nested array types
+  - For the full list of changes, please refer to the release notes for
+    [v9.0.0](https://github.com/silx-kit/h5web/releases/tag/v9.0.0)
+- Fall back gracefully when diffing an untracked file
+  [#32](https://github.com/silx-kit/vscode-h5web/pull/32)
+
 ## v0.0.9
 
 - ✨ Bump H5Web from v7.1.0 to v8.0.0
