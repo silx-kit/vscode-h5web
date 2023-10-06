@@ -1,6 +1,10 @@
 import './index.css';
 
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import App from './App';
+import { assertNonNull } from '@h5web/app';
 
-render(<App />, document.getElementById('root'));
+const rootElem = document.querySelector('#root');
+assertNonNull(rootElem);
+
+createRoot(rootElem).render(<App />);
