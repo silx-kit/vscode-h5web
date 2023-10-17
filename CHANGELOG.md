@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.0.11
+
+- ✨ Upgrade React to v18 and bump H5Web from v9.0.0 to v10.0.0
+  - `< Matrix >` Support visualising compound datasets containing (u)int64 data
+    — [#30](https://github.com/silx-kit/vscode-h5web/issues/30)
+  - `< Line, Heatmap >` Support visualizing boolean datasets
+  - For the full list of changes, please refer to the release notes for
+    [v10.0.0](https://github.com/silx-kit/h5web/releases/tag/v10.0.0)
+
 ## v0.0.10
 
 - ✨ Rerender automatically on file changes
