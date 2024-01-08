@@ -12,7 +12,8 @@ following file extensions: `.h5`, `.hdf`, `.hdf5`, `.nx`
 ([NeXus](https://manual.nexusformat.org/index.html)), `.nxs`, `.nx5`, `.nexus`,
 `.cxi`
 ([Coherent X-ray Imaging](https://raw.githubusercontent.com/cxidb/CXI/master/cxi_file_format.pdf)),
-`.nc` ([netCDF4](https://docs.unidata.ucar.edu/nug/current/)), `.nc4`.
+`.nc` ([netCDF4](https://docs.unidata.ucar.edu/nug/current/)), `.nc4`,
+[`.loom`](http://linnarssonlab.org/loompy/format/).
 
 To add more extensions, don't hesitate to
 [open an issue](https://github.com/silx-kit/vscode-h5web/issues/new) or
