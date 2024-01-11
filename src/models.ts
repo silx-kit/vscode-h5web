@@ -15,6 +15,7 @@ export interface FileInfo {
   uri: string;
   name: string;
   size: number;
+  supportedPlugins: Record<string, string>;
 }
 
 export interface Export {
