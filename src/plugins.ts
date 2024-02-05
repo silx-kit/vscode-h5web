@@ -1,4 +1,4 @@
-import { resolve } from 'path';
+import { resolve } from 'node:path';
 import { Uri, Webview } from 'vscode';
 
 import blosc from 'h5wasm-plugins/plugins/libH5Zblosc.so';

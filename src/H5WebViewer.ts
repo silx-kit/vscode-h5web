@@ -8,10 +8,9 @@ import {
   window,
   workspace,
 } from 'vscode';
-import { join, basename } from 'path';
-import { writeFileSync, watchFile, unwatchFile } from 'fs';
+import { join, basename, dirname } from 'node:path';
+import { writeFileSync, watchFile, unwatchFile } from 'node:fs';
 import { Message, MessageType } from './models';
-import path = require('path');
 import { getSupportedPlugins } from './plugins';
 
 export default class H5WebViewer
@@ -74,7 +73,7 @@ export default class H5WebViewer
         const { format, name, payload } = evt.data;
 
         const defaultUri = Uri.file(
-          path.join(path.dirname(document.uri.fsPath), `${name}.${format}`)
+          join(dirname(document.uri.fsPath), `${name}.${format}`)
         );
 
         const saveUri = await window.showSaveDialog({
