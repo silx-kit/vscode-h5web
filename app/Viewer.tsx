@@ -1,7 +1,7 @@
 import { App } from '@h5web/app';
 import { H5WasmProvider } from '@h5web/h5wasm';
 import { suspend } from 'suspend-react';
-import { getExportURL } from './utils';
+import { getExportURL, getPlugin } from './utils';
 import { type FileInfo } from '../src/models.js';
 
 interface Props {
@@ -10,6 +10,7 @@ interface Props {
 
 function Viewer(props: Props) {
   const { fileInfo } = props;
+  const { supportedPlugins } = fileInfo;
 
   const buffer = suspend(async () => {
     const res = await fetch(fileInfo.uri);
@@ -21,6 +22,7 @@ function Viewer(props: Props) {
       filename={fileInfo.name}
       buffer={buffer}
       getExportURL={getExportURL}
+      getPlugin={async (name) => getPlugin(supportedPlugins[name])}
     >
       <App />
     </H5WasmProvider>

@@ -8,10 +8,10 @@ import {
   window,
   workspace,
 } from 'vscode';
-import { join, basename } from 'path';
-import { writeFileSync, watchFile, unwatchFile } from 'fs';
+import { join, basename, dirname } from 'node:path';
+import { writeFileSync, watchFile, unwatchFile } from 'node:fs';
 import { Message, MessageType } from './models';
-import path = require('path');
+import { getSupportedPlugins } from './plugins';
 
 export default class H5WebViewer
   implements CustomReadonlyEditorProvider<CustomDocument>
@@ -47,16 +47,17 @@ export default class H5WebViewer
         const uri = webview.asWebviewUri(document.uri).toString();
         const name = basename(document.uri.fsPath);
         const { size } = await workspace.fs.stat(document.uri);
+        const supportedPlugins = getSupportedPlugins(webview);
 
         webview.postMessage({
           type: MessageType.FileInfo,
-          data: { uri, name, size },
+          data: { uri, name, size, supportedPlugins },
         });
 
         function watcher() {
           webview.postMessage({
             type: MessageType.FileInfo,
-            data: { uri, name, size },
+            data: { uri, name, size, supportedPlugins },
           });
         }
 
@@ -72,7 +73,7 @@ export default class H5WebViewer
         const { format, name, payload } = evt.data;
 
         const defaultUri = Uri.file(
-          path.join(path.dirname(document.uri.fsPath), `${name}.${format}`)
+          join(dirname(document.uri.fsPath), `${name}.${format}`)
         );
 
         const saveUri = await window.showSaveDialog({

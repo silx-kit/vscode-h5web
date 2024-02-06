@@ -56,3 +56,14 @@ export const getExportURL: GetExportURL = (
 
   return undefined;
 };
+
+export async function getPlugin(
+  url: string | undefined
+): Promise<ArrayBuffer | undefined> {
+  if (!url) {
+    return undefined;
+  }
+
+  const response = await fetch(url);
+  return response.arrayBuffer();
+}
