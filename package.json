@@ -3,7 +3,7 @@
   "displayName": "H5Web",
   "publisher": "h5web",
   "description": "Visualize HDF5 files in VS Code",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "European Synchrotron Radiation Facility",
   "license": "MIT",
   "homepage": "https://h5web.panosc.eu/",
