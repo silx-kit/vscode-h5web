@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.1.0
+
+> ⚠ Requires VS Code **1.86.0** (January 2024) or later.
+
+- 📂 Support the following seven HDF5 compression plugins: **Blosc, bzip2, LZ4,
+  LZF, SZ, ZFP and Zstandard**. The plugins are loaded on demand when
+  visualizing compressed datasets.
+  [#35](https://github.com/silx-kit/vscode-h5web/pull/35)
+- 🧩 Open `.loom` files in H5Web by default
+  [#36](https://github.com/silx-kit/vscode-h5web/pull/36)
+- ✨ Bump H5Web from v10.0.0 to v10.1.0
+  - `[H5WasmProvider]` Support lazy-loading seven compression plugins
+  - `< NX Heatmap >` Fix min axis array length off by 1 in error message
+  - For the full list of changes, please refer to the release notes for
+    [v10.1.0](https://github.com/silx-kit/h5web/releases/tag/v10.1.0)
+
 ## v0.0.11
 
 - ✨ Upgrade React to v18 and bump H5Web from v9.0.0 to v10.0.0
