@@ -1,7 +1,12 @@
-/.vscode/
-/node_modules/
-/dist/
+# Ignore everything
+**
 
-/app/
-/src/
-/vite.config.json
+# Include specific files
+!assets/*
+!dist/**
+!out/*
+!package.json
+!CONTRIBUTING.md
+!CHANGELOG.md
+!LICENSE.md
+!README.md
