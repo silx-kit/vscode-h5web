@@ -1,4 +1,5 @@
 import { ExportFormat } from '@h5web/app';
+import { Plugin } from '@h5web/h5wasm';
 
 export type Message =
   | { type: MessageType.Ready }
@@ -15,7 +16,7 @@ export interface FileInfo {
   uri: string;
   name: string;
   size: number;
-  supportedPlugins: Record<string, string>;
+  supportedPlugins: Record<Plugin, string>;
 }
 
 export interface Export {

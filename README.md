@@ -46,6 +46,12 @@ follows:
 },
 ```
 
+## Supported HDF5 compression plugins
+
+The extension supports reading datasets compressed with any of the plugins
+available in
+[h5wasm-plugins@0.0.3](https://github.com/h5wasm/h5wasm-plugins/tree/v0.0.3?tab=readme-ov-file#included-plugins).
+
 ## Known limitations
 
 This extension uses [h5wasm](https://github.com/usnistgov/h5wasm) to read HDF5
@@ -53,5 +59,3 @@ files and therefore suffers from the following limitations:
 
 - Files bigger than 2GB cannot be read
 - External links cannot be resolved
-- Datasets compressed with external filters (such as those of
-  [hdf5plugin](https://github.com/silx-kit/hdf5plugin)) cannot be read

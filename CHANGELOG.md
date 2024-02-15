@@ -1,5 +1,17 @@
 # Changelog
 
+## [v0.1.2](https://github.com/silx-kit/vscode-h5web/compare/v0.1.1...v0.1.2)
+
+- 📂 Add **Blosc2** and **Bitshuffle** compression plugins.
+- ✨ Bump H5Web from v10.1.0 to v11.0.0
+  - `[H5WasmProvider]` Support lazy-loading Blosc2 and Bitshuffle compression
+    plugins
+  - `[H5WasmProvider]` Correctly parse the following advanced HDF5 types:
+    `H5T_OPAQUE`, `H5T_VLEN`, and `H5T_REFERENCE` so they no longer appear as
+    _Unknown_ in the metadata viewer.
+  - For the full list of changes, please refer to the release notes for
+    [v11.0.0](https://github.com/silx-kit/h5web/releases/tag/v11.0.0)
+
 ## [v0.1.1](https://github.com/silx-kit/vscode-h5web/compare/v0.1.0...v0.1.1)
 
 - 🐛 Fix compression plugins failing to load under symlinked user directory.
