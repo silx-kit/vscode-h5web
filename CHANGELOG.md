@@ -1,5 +1,20 @@
 # Changelog
 
+## [v0.1.3](https://github.com/silx-kit/vscode-h5web/compare/v0.1.2...v0.1.3)
+
+- ✨ Upgrade H5Web from v11.0.0 to v11.1.1
+  - `< Raw >` Display JPEG/PNG images stored as
+    [opaque datasets](https://docs.h5py.org/en/stable/special.html#storing-other-types-as-opaque-data)
+  - `< Raw >` Fix error when encountering bigints in compound datasets
+  - `< Heatmap >` Add toolbar control to flip `X` axis
+  - `< NX Heatmap >` Support NeXus
+    [auxiliary signals](https://manual.nexusformat.org/classes/base_classes/NXdata.html#nxdata)
+  - Propagate HDF5 errors to viewer so they can be properly handled and
+    displayed
+  - For the full list of changes, please refer to the release notes for
+    [v11.1.0](https://github.com/silx-kit/h5web/releases/tag/v11.1.0) and
+    [v11.1.1](https://github.com/silx-kit/h5web/releases/tag/v11.1.1)
+
 ## [v0.1.2](https://github.com/silx-kit/vscode-h5web/compare/v0.1.1...v0.1.2)
 
 - 📂 Add **Blosc2** and **Bitshuffle** compression plugins.
@@ -18,7 +33,7 @@
 
 ## [v0.1.0](https://github.com/silx-kit/vscode-h5web/compare/v0.0.11...v0.1.0)
 
-> ⚠ Requires VS Code **1.86.0** (January 2024) or later.
+> ⚠️ Requires VS Code **1.86.0** (January 2024) or later.
 
 - 📂 Support the following seven HDF5 compression plugins: **Blosc, bzip2, LZ4,
   LZF, SZ, ZFP and Zstandard**. The plugins are loaded on demand when

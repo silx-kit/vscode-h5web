@@ -6,11 +6,11 @@ settings:
 
 dependencies:
   '@h5web/app':
-    specifier: 11.0.0
-    version: 11.0.0(@types/react@18.2.25)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
+    specifier: 11.1.1
+    version: 11.1.1(@types/react@18.2.25)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
   '@h5web/h5wasm':
-    specifier: 11.0.0
-    version: 11.0.0(@h5web/app@11.0.0)(react@18.2.0)(typescript@5.2.2)
+    specifier: 11.1.1
+    version: 11.1.1(@h5web/app@11.1.1)(react@18.2.0)(typescript@5.2.2)
   '@react-hookz/web':
     specifier: 15.0.1
     version: 15.0.1(react-dom@18.2.0)(react@18.2.0)
@@ -545,8 +545,8 @@ packages:
     dev: true
     optional: true
 
-  /@h5web/app@11.0.0(@types/react@18.2.25)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-ubtbFtSYOHmBfCq5a/gjtJlDIDKm1YmxXD//Q7GWHYnuDeSc+tMGUai7Xd9+gGgWSgUqZ+o8uBvfbDwQ5MC1Ag==}
+  /@h5web/app@11.1.1(@types/react@18.2.25)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-bzU8p2f1zckxgQUIrg123pmuxW5u6eJPqox9XW8uNPUtez8mlxao+b9FUcSEijao9oZBWF6Iree6upd/YniYcQ==}
     peerDependencies:
       react: '>=18'
       react-dom: '>=18'
@@ -555,23 +555,23 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@h5web/lib': 11.0.0(@react-three/fiber@8.15.16)(@types/react@18.2.25)(react-dom@18.2.0)(react@18.2.0)(three@0.161.0)(typescript@5.2.2)
+      '@h5web/lib': 11.1.1(@react-three/fiber@8.15.19)(@types/react@18.2.25)(react-dom@18.2.0)(react@18.2.0)(three@0.162.0)(typescript@5.2.2)
       '@react-hookz/web': 24.0.4(react-dom@18.2.0)(react@18.2.0)
-      '@react-three/fiber': 8.15.16(react-dom@18.2.0)(react@18.2.0)(three@0.161.0)
+      '@react-three/fiber': 8.15.19(react-dom@18.2.0)(react@18.2.0)(three@0.162.0)
       axios: 1.6.7
       d3-format: 3.1.0
       ndarray: 1.0.19
       ndarray-ops: 1.2.2
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      react-error-boundary: 4.0.12(react@18.2.0)
+      react-error-boundary: 4.0.13(react@18.2.0)
       react-icons: 5.0.1(react@18.2.0)
-      react-reflex: 4.1.0(react-dom@18.2.0)(react@18.2.0)
+      react-reflex: 4.2.6(react-dom@18.2.0)(react@18.2.0)
       react-slider: 2.0.4(react@18.2.0)
       react-suspense-fetch: 0.4.1
-      three: 0.161.0
+      three: 0.162.0
       typescript: 5.2.2
-      zustand: 4.5.0(@types/react@18.2.25)(react@18.2.0)
+      zustand: 4.5.2(@types/react@18.2.25)(react@18.2.0)
     transitivePeerDependencies:
       - '@types/react'
       - debug
@@ -584,25 +584,25 @@ packages:
       - react-native
     dev: false
 
-  /@h5web/h5wasm@11.0.0(@h5web/app@11.0.0)(react@18.2.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-wMJLHI1tJ14rg+MYzKbXOYW/VeoqEsg+1XDKaeq844mtMDwndCsJDQzNE8EyA/LfsJjab2a7ZWTvGbmodgIB9Q==}
+  /@h5web/h5wasm@11.1.1(@h5web/app@11.1.1)(react@18.2.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-xACfCaMgui51EeijaY0dX3uA3SZTxZ19e/r8rbhz3Y8NBG8CZazeVk10LrgoS46//Icr4iQo7Q6EqWRfIkTfbQ==}
     peerDependencies:
-      '@h5web/app': 11.0.0
+      '@h5web/app': 11.1.1
       react: '>=18'
       typescript: '>=4.5'
     peerDependenciesMeta:
       typescript:
         optional: true
     dependencies:
-      '@h5web/app': 11.0.0(@types/react@18.2.25)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
-      h5wasm: 0.7.1
-      nanoid: 5.0.5
+      '@h5web/app': 11.1.1(@types/react@18.2.25)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
+      h5wasm: 0.7.2
+      nanoid: 5.0.6
       react: 18.2.0
       typescript: 5.2.2
     dev: false
 
-  /@h5web/lib@11.0.0(@react-three/fiber@8.15.16)(@types/react@18.2.25)(react-dom@18.2.0)(react@18.2.0)(three@0.161.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-3ILudma+6Z/MTPU94dUTRLKh2sbsEzRH/i47irV4fxOo5WGH/hMjATUcyt6dnFYq2Ykenhi639/yu2M1c3bpOA==}
+  /@h5web/lib@11.1.1(@react-three/fiber@8.15.19)(@types/react@18.2.25)(react-dom@18.2.0)(react@18.2.0)(three@0.162.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-q6gRPkg9K/t5j3IvieJ8CSO9ZMoWk//f2GnfFVViQ4maIDzhxTY2MXdw5bVj/jYELg+cADBNAzVJC0BvVn9/2g==}
     peerDependencies:
       '@react-three/fiber': '>=8'
       react: '>=18'
@@ -614,8 +614,8 @@ packages:
         optional: true
     dependencies:
       '@react-hookz/web': 24.0.4(react-dom@18.2.0)(react@18.2.0)
-      '@react-three/fiber': 8.15.16(react-dom@18.2.0)(react@18.2.0)(three@0.161.0)
-      '@visx/axis': 3.8.0(react@18.2.0)
+      '@react-three/fiber': 8.15.19(react-dom@18.2.0)(react@18.2.0)(three@0.162.0)
+      '@visx/axis': 3.10.1(react@18.2.0)
       '@visx/drag': 3.3.0(react@18.2.0)
       '@visx/grid': 3.5.0(react@18.2.0)
       '@visx/scale': 3.5.0
@@ -626,7 +626,7 @@ packages:
       d3-format: 3.1.0
       d3-interpolate: 3.0.1
       d3-scale: 4.0.2
-      d3-scale-chromatic: 3.0.0
+      d3-scale-chromatic: 3.1.0
       ndarray: 1.0.19
       ndarray-ops: 1.2.2
       react: 18.2.0
@@ -637,9 +637,9 @@ packages:
       react-measure: 2.5.2(react-dom@18.2.0)(react@18.2.0)
       react-slider: 2.0.4(react@18.2.0)
       react-window: 1.8.10(react-dom@18.2.0)(react@18.2.0)
-      three: 0.161.0
+      three: 0.162.0
       typescript: 5.2.2
-      zustand: 4.5.0(@types/react@18.2.25)(react@18.2.0)
+      zustand: 4.5.2(@types/react@18.2.25)(react@18.2.0)
     transitivePeerDependencies:
       - '@types/react'
       - immer
@@ -723,8 +723,8 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@react-three/fiber@8.15.16(react-dom@18.2.0)(react@18.2.0)(three@0.161.0):
-    resolution: {integrity: sha512-4f47K9e2mP8W/guNtu3e2J/Nt6GwKTsX/YP2dktPZRcpHYEsqfXCO8kSfvVMb+lQ8wR0HoFzggqdnGuhZaui0g==}
+  /@react-three/fiber@8.15.19(react-dom@18.2.0)(react@18.2.0)(three@0.162.0):
+    resolution: {integrity: sha512-WbFU7T6485v8Onnp+JJnrzKFvvGP7OFyJmHlqXiXc2RcXl9Sax+ykJxiNwEXWjGjcgF9/KTfv0+pAVkP0vZlKg==}
     peerDependencies:
       expo: '>=43.0'
       expo-asset: '>=8.4'
@@ -760,7 +760,7 @@ packages:
       react-use-measure: 2.1.1(react-dom@18.2.0)(react@18.2.0)
       scheduler: 0.21.0
       suspend-react: 0.1.3(react@18.2.0)
-      three: 0.161.0
+      three: 0.162.0
       zustand: 3.7.2(react@18.2.0)
     dev: false
 
@@ -880,8 +880,8 @@ packages:
     resolution: {integrity: sha512-n3u5sqXQJhf1CS68mw3Wf16FQ4cRPNBBwdYLFzq3UddiADOim1Pn3Y6PBdDilz1vOJF3ybLxJ8ZEDlLIzrOQZg==}
     dev: false
 
-  /@visx/axis@3.8.0(react@18.2.0):
-    resolution: {integrity: sha512-CFIxPnRlIWIz8N+5n4DTSOQQ2Yb0D35YPylEkmk/c7J4haLCEhyI44JaOg6OYOk6ofCOsu9Fqe6dFAOP+MP1IQ==}
+  /@visx/axis@3.10.1(react@18.2.0):
+    resolution: {integrity: sha512-HBEDLcpZoJ16hFbkYu3S6mN5mbwlFmUWY5yN967X06RdIL4LmAG3gnZ7u4F9buA3LQo+trJXW78moN005odD4Q==}
     peerDependencies:
       react: ^16.3.0-0 || ^17.0.0-0 || ^18.0.0-0
     dependencies:
@@ -1219,8 +1219,8 @@ packages:
     resolution: {integrity: sha512-VLaYcn81dtHVTjEHd8B+pbe9yHWpXKZUC87PzoFmsFrJqgFwDe/qxfp5MlfsfM1V5E/iVt0MmEbWQ7FVIXh/bg==}
     dev: false
 
-  /d3-scale-chromatic@3.0.0:
-    resolution: {integrity: sha512-Lx9thtxAKrO2Pq6OO2Ua474opeziKr279P/TKZsMAhYyNDD3EnCffdbgeSYN5O7m2ByQsxtuP2CSDczNUIZ22g==}
+  /d3-scale-chromatic@3.1.0:
+    resolution: {integrity: sha512-A3s5PWiZ9YCXFye1o246KoscMWqf8BsD9eRiJ3He7C9OBaxKhAd5TFCdEx/7VbKtxxTsu//1mMJFrEt572cEyQ==}
     engines: {node: '>=12'}
     dependencies:
       d3-color: 3.1.0
@@ -1611,8 +1611,8 @@ packages:
     resolution: {integrity: sha512-GxBWGVxBftyq67kAbS4WPmTH3a8hGKigdMm+IVJ7tLY7BHj+nqDTUKO9RmmPBHy6Pvq5uW1YpIJr/oGanw+RyQ==}
     dev: false
 
-  /h5wasm@0.7.1:
-    resolution: {integrity: sha512-/mLmL35/vSJXgK6zPpHPINj8nxLYlqqnt4ScVZe2W8L9e1ZhVg+a1/4aBBmjfW8AiTbYsEn9Yu3nEOB+CuOyLw==}
+  /h5wasm@0.7.2:
+    resolution: {integrity: sha512-+jbCShZ5kzQVV0oJBiMiyh3updPHD3mpEAHFpPp8erhkSSZ+MoZuNzaJX2s3UO+8QUQigbHpNzeqDePLcjX61Q==}
     dev: false
 
   /has-flag@3.0.0:
@@ -1719,8 +1719,8 @@ packages:
     hasBin: true
     dev: true
 
-  /nanoid@5.0.5:
-    resolution: {integrity: sha512-/Veqm+QKsyMY3kqi4faWplnY1u+VuKO3dD2binyPIybP31DRO29bPF+1mszgLnrR2KqSLceFLBNw0zmvDzN1QQ==}
+  /nanoid@5.0.6:
+    resolution: {integrity: sha512-rRq0eMHoGZxlvaFOUdK1Ev83Bd1IgzzR+WJ3IbDJ7QOSdAxYjlurSPqFs9s4lJg29RT6nPwizFtJhQS6V5xgiA==}
     engines: {node: ^18 || >=20}
     hasBin: true
     dev: false
@@ -1822,8 +1822,8 @@ packages:
       react: 18.2.0
     dev: false
 
-  /react-error-boundary@4.0.12(react@18.2.0):
-    resolution: {integrity: sha512-kJdxdEYlb7CPC1A0SeUY38cHpjuu6UkvzKiAmqmOFL21VRfMhOcWxTCBgLVCO0VEMh9JhFNcVaXlV4/BTpiwOA==}
+  /react-error-boundary@4.0.13(react@18.2.0):
+    resolution: {integrity: sha512-b6PwbdSv8XeOSYvjt8LpgpKrZ0yGdtZokYwkwV2wlcZbxgopHX/hgPl5VgpnoVOWd868n1hktM8Qm4b+02MiLQ==}
     peerDependencies:
       react: '>=16.13.1'
     dependencies:
@@ -1881,8 +1881,8 @@ packages:
       scheduler: 0.21.0
     dev: false
 
-  /react-reflex@4.1.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-HA+JFDBxRqGgo2oz2qv+3Rf3ZjWCCjdjNOMYFzQ37jwCLfIAfnjBVcYEMtjGRFcFphC38s424D+Fh3ZL19apow==}
+  /react-reflex@4.2.6(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-MLGty/ii/BTipKZ47dfs8Ue5g1xqgCxUCDM34ruEr0UVJuXGDzcSX9wPMzRcv4dUR+1tw4hm4c3a6V6hLO2XcA==}
     peerDependencies:
       react: ^16.0.0 || ^17.0.0 || ^18.0.0
     dependencies:
@@ -2045,8 +2045,8 @@ packages:
     resolution: {integrity: sha512-HnA3I2sxRQe/SZgQTQgQvvA17DhfzhBJ1LfSOXZ5VUTbxGLvnAqUef84ZGNNSEbk1ZMEIDeghTHZagJ7LifAgg==}
     dev: false
 
-  /three@0.161.0:
-    resolution: {integrity: sha512-LC28VFtjbOyEu5b93K0bNRLw1rQlMJ85lilKsYj6dgTu+7i17W+JCCEbvrpmNHF1F3NAUqDSWq50UD7w9H2xQw==}
+  /three@0.162.0:
+    resolution: {integrity: sha512-xfCYj4RnlozReCmUd+XQzj6/5OjDNHBy5nT6rVwrOKGENAvpXe2z1jL+DZYaMu4/9pNsjH/4Os/VvS9IrH7IOQ==}
     dev: false
 
   /to-fast-properties@2.0.0:
@@ -2122,8 +2122,8 @@ packages:
       react: 18.2.0
     dev: false
 
-  /zustand@4.5.0(@types/react@18.2.25)(react@18.2.0):
-    resolution: {integrity: sha512-zlVFqS5TQ21nwijjhJlx4f9iGrXSL0o/+Dpy4txAP22miJ8Ti6c1Ol1RLNN98BMib83lmDH/2KmLwaNXpjrO1A==}
+  /zustand@4.5.2(@types/react@18.2.25)(react@18.2.0):
+    resolution: {integrity: sha512-2cN1tPkDVkwCy5ickKrI7vijSjPksFRfqS6237NzT0vqSsztTNnQdHw9mmN7uBdk3gceVXU0a+21jFzFzAc9+g==}
     engines: {node: '>=12.7.0'}
     peerDependencies:
       '@types/react': '>=16.8'
