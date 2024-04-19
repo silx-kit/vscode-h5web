@@ -1,5 +1,12 @@
 # Changelog
 
+## [v0.1.5](https://github.com/silx-kit/vscode-h5web/compare/v0.1.4...v0.1.5)
+
+- ✨ **Allow opening HDF5 files of any size.** Previously, when you tried to
+  open a file larger than 2 GB, you would see an error in the H5Web webview
+  editor. Now, you will be able to browse for the file manually from inside the
+  webview, and doing so will bypass the file size limitation.
+
 ## [v0.1.4](https://github.com/silx-kit/vscode-h5web/compare/v0.1.3...v0.1.4)
 
 - ✨ Upgrade H5Web from v11.1.1 to v11.2.0
