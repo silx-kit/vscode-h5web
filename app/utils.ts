@@ -1,9 +1,28 @@
-import type { GetExportURL } from '@h5web/app';
+import { assertNonNull, type GetExportURL } from '@h5web/app';
 import { MessageType } from '../src/models.js';
 import { vscode } from './vscode-api.js';
+import type { Plugin } from '@h5web/h5wasm';
+
+const pluginsScriptElem = document.getElementById('plugins');
+assertNonNull(pluginsScriptElem);
+
+const PLUGINS = JSON.parse(pluginsScriptElem.innerHTML);
 
 // 2 GB = 2 * 1024 * 1024 * 1024 B
 export const MAX_SIZE_IN_BYTES = 2147483648;
+
+export async function getPlugin(
+  name: Plugin
+): Promise<ArrayBuffer | undefined> {
+  const url = PLUGINS[name];
+
+  if (!url) {
+    return undefined;
+  }
+
+  const response = await fetch(url);
+  return response.arrayBuffer();
+}
 
 export const getExportURL: GetExportURL = (
   format,
@@ -56,14 +75,3 @@ export const getExportURL: GetExportURL = (
 
   return undefined;
 };
-
-export async function getPlugin(
-  url: string | undefined
-): Promise<ArrayBuffer | undefined> {
-  if (!url) {
-    return undefined;
-  }
-
-  const response = await fetch(url);
-  return response.arrayBuffer();
-}
