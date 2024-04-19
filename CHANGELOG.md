@@ -1,5 +1,14 @@
 # Changelog
 
+## [v0.1.4](https://github.com/silx-kit/vscode-h5web/compare/v0.1.3...v0.1.4)
+
+- ✨ Upgrade H5Web from v11.1.1 to v11.2.0
+  - `< RGB >` Allow flipping RGB visualizations on X and Y
+  - Add _NX Note_ visualization with support for JSON MIME type
+  - Improve support for empty datasets and attributes
+  - For the full list of changes, please refer to the release notes for
+    [v11.2.0](https://github.com/silx-kit/h5web/releases/tag/v11.2.0)
+
 ## [v0.1.3](https://github.com/silx-kit/vscode-h5web/compare/v0.1.2...v0.1.3)
 
 - ✨ Upgrade H5Web from v11.0.0 to v11.1.1
