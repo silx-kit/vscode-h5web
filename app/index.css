@@ -1,14 +1,6 @@
 @import 'normalize.css';
-@import '@h5web/app/dist/styles.css';
+@import '@h5web/app/styles.css';
 
 #root {
   height: 100vh;
-}
-
-/* === Override styles injected by VS Code into webview === */
-
-img {
-  /* Fix display of images in Raw vis */
-  max-width: none !important;
-  max-height: none !important;
 }
