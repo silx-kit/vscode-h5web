@@ -57,5 +57,7 @@ available in
 This extension uses [h5wasm](https://github.com/usnistgov/h5wasm) to read HDF5
 files and therefore suffers from the following limitations:
 
-- Files bigger than 2GB cannot be read
-- External links cannot be resolved
+- Files bigger than 2GB cannot be opened automatically from the VS Code
+  Explorer. You will need to browse for them manually from the H5Web webview
+  editor when requested.
+- External links cannot be resolved.
