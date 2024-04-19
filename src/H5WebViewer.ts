@@ -48,22 +48,15 @@ export default class H5WebViewer
         const name = basename(document.uri.fsPath);
         const { size } = await workspace.fs.stat(document.uri);
 
-        const supportedPlugins = Object.fromEntries(
-          Object.entries(PLUGINS).map(([name, relativePath]) => {
-            const pluginUri = Uri.joinPath(extensionUri, 'out', relativePath);
-            return [name, webview.asWebviewUri(pluginUri).toString()];
-          })
-        );
-
         webview.postMessage({
           type: MessageType.FileInfo,
-          data: { uri, name, size, supportedPlugins },
+          data: { uri, name, size },
         });
 
         function watcher() {
           webview.postMessage({
             type: MessageType.FileInfo,
-            data: { uri, name, size, supportedPlugins },
+            data: { uri, name, size },
           });
         }
 
@@ -97,7 +90,7 @@ export default class H5WebViewer
   }
 
   private async getHtmlForWebview(webview: Webview): Promise<string> {
-    const { extensionPath } = this.context;
+    const { extensionPath, extensionUri } = this.context;
     const { cspSource } = webview;
 
     const manifest = require(join(extensionPath, 'dist/manifest.json'));
@@ -109,6 +102,15 @@ export default class H5WebViewer
 
     const jsUri = webview.asWebviewUri(jsPathOnDisk);
     const cssUri = webview.asWebviewUri(cssPathOnDisk);
+
+    const plugins = JSON.stringify(
+      Object.fromEntries(
+        Object.entries(PLUGINS).map(([name, relativePath]) => {
+          const pluginUri = Uri.joinPath(extensionUri, 'out', relativePath);
+          return [name, webview.asWebviewUri(pluginUri).toString()];
+        })
+      )
+    );
 
     /*
      * CSP policy:
@@ -126,6 +128,7 @@ export default class H5WebViewer
         >
 				<meta name="viewport" content="width=device-width, initial-scale=1.0">
 				<title>H5Web</title>
+        <script id="plugins" type="application/json">${plugins}</script>
         <script type="module" src="${jsUri}"></script>
         <link rel="stylesheet" href="${cssUri}">
 			</head>
