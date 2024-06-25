@@ -1,5 +1,5 @@
 import { App } from '@h5web/app';
-import { H5WasmProvider } from '@h5web/h5wasm';
+import { H5WasmBufferProvider } from '@h5web/h5wasm';
 import { suspend } from 'suspend-react';
 import { getExportURL, getPlugin } from './utils';
 import { type FileInfo } from '../src/models.js';
@@ -17,14 +17,14 @@ function Viewer(props: Props) {
   }, [fileInfo]);
 
   return (
-    <H5WasmProvider
+    <H5WasmBufferProvider
       filename={fileInfo.name}
       buffer={buffer}
       getExportURL={getExportURL}
       getPlugin={getPlugin}
     >
       <App />
-    </H5WasmProvider>
+    </H5WasmBufferProvider>
   );
 }
 
