@@ -2,6 +2,25 @@
 
 ## [v0.1.5](https://github.com/silx-kit/vscode-h5web/compare/v0.1.4...v0.1.5)
 
+- ✨ Upgrade H5Web from v11.2.0 to v12.0.0
+  - Support virtual datasets with compressed local sources
+  - `< NX Line, NX Heatmap >` Support complex auxiliary signals
+  - `< Line >` Replace _Autoscale_ toggle in toolbar with domain widget to allow
+    customising the `y` axis domain
+  - `< Compound >` Visualize compound scalar datasets
+  - `< Raw >` Add toggle to fit raw JPEG/PNG images to viewport (on by default)
+  - :bug: `< Raw >` Disable dark mode on raw JPEG/PNG images
+  - :bug: Don't capitalize attribute names in metadata viewer
+  - :zap: Reduce delay when slicing through a dimension whenever the target
+    slice is already in the cache
+  - Make variable-length string types explicit in metadata viewer
+  - Allow inspecting HDF5 string padding metadata with h5grove (>=2.2.0), h5wasm
+    and HSDS providers
+  - For the full list of changes, please refer to the release notes for
+    [v12.0.0](https://github.com/silx-kit/h5web/releases/tag/v12.0.0)
+
+## [v0.1.5](https://github.com/silx-kit/vscode-h5web/compare/v0.1.4...v0.1.5)
+
 - ✨ **Allow opening HDF5 files of any size.** Previously, when you tried to
   open a file larger than 2 GB, you would see an error in the H5Web webview
   editor. Now, you will be able to browse for the file manually from inside the

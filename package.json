@@ -63,8 +63,8 @@
     "pub": "pnpm dlx @vscode/vsce publish --no-dependencies"
   },
   "dependencies": {
-    "@h5web/app": "11.2.0",
-    "@h5web/h5wasm": "11.2.0",
+    "@h5web/app": "12.0.0",
+    "@h5web/h5wasm": "12.0.0",
     "@react-hookz/web": "15.0.1",
     "axios": "0.27.2",
     "h5wasm-plugins": "0.0.3",
