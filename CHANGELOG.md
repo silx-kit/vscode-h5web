@@ -1,6 +1,6 @@
 # Changelog
 
-## [v0.1.5](https://github.com/silx-kit/vscode-h5web/compare/v0.1.4...v0.1.5)
+## [v0.1.6](https://github.com/silx-kit/vscode-h5web/compare/v0.1.5...v0.1.6)
 
 - ✨ Upgrade H5Web from v11.2.0 to v12.0.0
   - Support virtual datasets with compressed local sources
