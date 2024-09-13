@@ -1,5 +1,18 @@
 # Changelog
 
+## [v0.1.7](https://github.com/silx-kit/vscode-h5web/compare/v0.1.6...v0.1.7)
+
+- 🧩 Open `.jld2` files in H5Web by default
+  [#36](https://github.com/silx-kit/vscode-h5web/pull/36)
+- ✨ Upgrade H5Web from v12.0.0 to v13.0.0
+  - Preserve dimension mapping and slicing when possible, notably when toggling
+    inspect mode or selecting another dataset with the same dimensions
+  - Support visualizing enum datasets and signals
+  - Support variable-length datasets
+  - Support inspecting metadata of committed datatypes
+  - For the full list of changes, please refer to the release notes for
+    [v13.0.0](https://github.com/silx-kit/h5web/releases/tag/v13.0.0)
+
 ## [v0.1.6](https://github.com/silx-kit/vscode-h5web/compare/v0.1.5...v0.1.6)
 
 - ✨ Upgrade H5Web from v11.2.0 to v12.0.0
