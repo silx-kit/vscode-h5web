@@ -13,7 +13,8 @@ following file extensions: `.h5`, `.hdf`, `.hdf5`, `.nx`
 `.cxi`
 ([Coherent X-ray Imaging](https://raw.githubusercontent.com/cxidb/CXI/master/cxi_file_format.pdf)),
 `.nc` ([netCDF4](https://docs.unidata.ucar.edu/nug/current/)), `.nc4`,
-[`.loom`](http://linnarssonlab.org/loompy/format/).
+[`.loom`](http://linnarssonlab.org/loompy/format/),
+[`jld2`](https://github.com/JuliaIO/JLD2.jl).
 
 To add more extensions, don't hesitate to
 [open an issue](https://github.com/silx-kit/vscode-h5web/issues/new) or
