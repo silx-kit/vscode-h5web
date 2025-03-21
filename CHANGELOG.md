@@ -1,5 +1,25 @@
 # Changelog
 
+## [v0.1.8](https://github.com/silx-kit/vscode-h5web/compare/v0.1.7...v0.1.8)
+
+- ✏️ Open output file after exporting dataset/slice to CSV or JSON
+  [#53](https://github.com/silx-kit/vscode-h5web/pull/53)
+- ✨ Upgrade H5Web from v13.0.0 to v14.0.0
+  - `< NX Line >` Support CSV export — the following columns are exported, in
+    order, when the corresponding datasets are present in the `NXdata` group:
+    values, abscissas, errors, aux1, aux1 errors, aux2, aux2 errors, ...
+  - `< Compound >` Include field names when exporting to CSV
+  - `< Matrix >` Respect transposition when exporting 2D dataset/slice to CSV
+  - `< Matrix, Compound >` Replace _Fixed-point_ notation with _Exact_ notation
+    in toolbar to allow viewing and copying exact values
+  - `< Scalar, Matrix, Compound >` Display `int64` values with exact precision
+  - Don't crash when switching to log scale while visualizing a dataset with a
+    negative domain — fall back to the default domain `[0.1, 1]` so user can
+    switch back to a supported scale
+  - Fix broken layout when inspecting dataset with long attributes
+  - For the full list of changes, please refer to the release notes for
+    [v14.0.0](https://github.com/silx-kit/h5web/releases/tag/v14.0.0)
+
 ## [v0.1.7](https://github.com/silx-kit/vscode-h5web/compare/v0.1.6...v0.1.7)
 
 - 🧩 Open `.jld2` files in H5Web by default
