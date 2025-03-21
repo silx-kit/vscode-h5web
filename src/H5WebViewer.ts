@@ -5,6 +5,7 @@ import {
   Uri,
   Webview,
   WebviewPanel,
+  commands,
   window,
   workspace,
 } from 'vscode';
@@ -82,6 +83,10 @@ export default class H5WebViewer
 
         if (saveUri) {
           writeFileSync(saveUri.fsPath, payload);
+
+          // Open output file in separate editor
+          commands.executeCommand('workbench.action.keepEditor'); // if current editor is in preview mode, keep it open
+          window.showTextDocument(saveUri);
         }
 
         return;
