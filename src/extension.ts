@@ -9,7 +9,7 @@ export function activate(context: ExtensionContext) {
       window.registerCustomEditorProvider(id, new H5WebViewer(context), {
         webviewOptions: { retainContextWhenHidden: true },
         supportsMultipleEditorsPerDocument: true,
-      })
-    )
+      }),
+    ),
   );
 }

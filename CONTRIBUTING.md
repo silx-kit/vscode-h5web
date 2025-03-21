@@ -36,8 +36,13 @@ Code window where the extension is running with <kbd>Ctrl+R</kbd>.
 5. The extension then sends the URI and name of the HDF5 file opened by the user
    to the viewer.
 6. Finally, the viewer fetches the file with the given URI as an array buffer,
-   passes that buffer to the `H5WasmProvider`, and renders H5Web's `App`
+   passes that buffer to the `H5WasmBufferProvider`, and renders H5Web's `App`
    component.
+7. If the file is larger than 2 GB and can't fit into a single buffer, the `App`
+   component renders a fallback `StandaloneViewer`, which offers to the user to
+   browse for the file from inside the webview. In doing so, the webview can
+   make use of H5Web's `H5WasmLocalFileProvider`, which has no file size
+   restriction.
 
 ## Publishing
 
