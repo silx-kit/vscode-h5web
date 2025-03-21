@@ -1,6 +1,6 @@
 # Changelog
 
-## [v0.1.8](https://github.com/silx-kit/vscode-h5web/compare/v0.1.7...v0.1.8)
+## [v0.1.9](https://github.com/silx-kit/vscode-h5web/compare/v0.1.7...v0.1.9)
 
 - ✏️ Open output file after exporting dataset/slice to CSV or JSON
   [#53](https://github.com/silx-kit/vscode-h5web/pull/53)
@@ -19,6 +19,8 @@
   - Fix broken layout when inspecting dataset with long attributes
   - For the full list of changes, please refer to the release notes for
     [v14.0.0](https://github.com/silx-kit/h5web/releases/tag/v14.0.0)
+
+> v0.1.8 broken and skipped
 
 ## [v0.1.7](https://github.com/silx-kit/vscode-h5web/compare/v0.1.6...v0.1.7)
 
