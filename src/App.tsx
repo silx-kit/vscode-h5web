@@ -3,7 +3,7 @@ import { useEventListener } from '@react-hookz/web';
 import Viewer from './Viewer';
 import { ErrorBoundary } from 'react-error-boundary';
 import { vscode } from './vscode-api';
-import { MessageType, type Message, type FileInfo } from '../src/models';
+import { MessageType, type Message, type FileInfo } from '../extension/models';
 import StandaloneViewer from './StandaloneViewer';
 
 // 2 GB = 2 * 1024 * 1024 * 1024 B
