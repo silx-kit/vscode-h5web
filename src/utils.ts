@@ -5,7 +5,7 @@ import {
   type ExportFormat,
   type ExportURL,
 } from '@h5web/app';
-import { MessageType } from '../src/models.js';
+import { MessageType } from '../extension/models.js';
 import { vscode } from './vscode-api.js';
 import type { Plugin } from '@h5web/h5wasm';
 

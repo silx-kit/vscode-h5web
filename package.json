@@ -56,7 +56,7 @@
   "scripts": {
     "build": "pnpm build:app && pnpm build:extension --minify",
     "build:app": "vite build",
-    "build:extension": "esbuild ./src/extension.ts --bundle --outfile=out/main.js --external:vscode --loader:.so=file --format=cjs --platform=node",
+    "build:extension": "esbuild ./extension/index.ts --bundle --outfile=out/main.js --external:vscode --loader:.so=file --format=cjs --platform=node",
     "watch": "pnpm build:extension --sourcemap --watch",
     "prettier": "prettier . --cache --check",
     "vscode:prepublish": "pnpm build",
@@ -79,7 +79,7 @@
     "@types/react-dom": "^18.3.5",
     "@types/vscode": "~1.86.0",
     "@types/vscode-webview": "~1.57.5",
-    "@vitejs/plugin-react": "4.3.4",
+    "@vitejs/plugin-react-swc": "3.8.1",
     "esbuild": "0.25.1",
     "prettier": "3.5.3",
     "typescript": "5.8.2",
