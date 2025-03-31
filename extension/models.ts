@@ -1,5 +1,4 @@
-import { ExportFormat } from '@h5web/app';
-import { Plugin } from '@h5web/h5wasm';
+import { type ExportFormat } from '@h5web/app';
 
 export type Message =
   | { type: MessageType.Ready }

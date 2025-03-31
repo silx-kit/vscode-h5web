@@ -1,18 +1,19 @@
-import { Suspense, useEffect, useState } from 'react';
 import { useEventListener } from '@react-hookz/web';
-import Viewer from './Viewer';
+import { Suspense, useEffect, useState } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
-import { vscode } from './vscode-api';
-import { MessageType, type Message, type FileInfo } from '../extension/models';
+
+import { type FileInfo, type Message, MessageType } from '../extension/models';
 import StandaloneViewer from './StandaloneViewer';
+import Viewer from './Viewer';
+import { vscode } from './vscode-api';
 
 // 2 GB = 2 * 1024 * 1024 * 1024 B
-const MAX_SIZE_IN_BYTES = 2147483648;
+const MAX_SIZE_IN_BYTES = 2_147_483_648;
 
 function App() {
   const [fileInfo, setFileInfo] = useState<FileInfo>();
 
-  useEventListener(window, 'message', (evt: MessageEvent<Message>) => {
+  useEventListener(globalThis, 'message', (evt: MessageEvent<Message>) => {
     const { data: message } = evt;
     if (message.type === MessageType.FileInfo) {
       setFileInfo(message.data);
@@ -46,7 +47,11 @@ function App() {
   }
 
   return (
-    <ErrorBoundary fallbackRender={({ error }) => <p>{error.message}</p>}>
+    <ErrorBoundary
+      fallbackRender={({ error }) => (
+        <p>{error instanceof Error ? error.message : 'Unknown error'}</p>
+      )}
+    >
       <Suspense fallback={<>Loading...</>}>
         <Viewer fileInfo={fileInfo} />
       </Suspense>

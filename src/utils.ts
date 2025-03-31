@@ -5,14 +5,18 @@ import {
   type ExportFormat,
   type ExportURL,
 } from '@h5web/app';
+import { type Plugin } from '@h5web/h5wasm';
+
 import { MessageType } from '../extension/models.js';
 import { vscode } from './vscode-api.js';
-import type { Plugin } from '@h5web/h5wasm';
 
 const pluginsScriptElem = document.getElementById('plugins');
 assertNonNull(pluginsScriptElem);
 
-const PLUGINS = JSON.parse(pluginsScriptElem.innerHTML);
+const PLUGINS = JSON.parse(pluginsScriptElem.innerHTML) as Record<
+  Plugin,
+  string
+>;
 
 export async function getPlugin(
   name: Plugin,

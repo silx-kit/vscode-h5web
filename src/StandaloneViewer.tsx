@@ -1,6 +1,7 @@
 import { App } from '@h5web/app';
 import { H5WasmLocalFileProvider } from '@h5web/h5wasm';
-import { useState, type ReactNode } from 'react';
+import { type ReactNode, useState } from 'react';
+
 import { getExportURL, getPlugin } from './utils';
 
 interface Props {
@@ -17,6 +18,7 @@ function StandaloneViewer(props: Props) {
         {customMessage}
         <input
           type="file"
+          aria-label="Select file"
           onChange={(evt) => setFallbackFile(evt.target.files?.[0])}
         />
       </>

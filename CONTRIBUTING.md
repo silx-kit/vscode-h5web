@@ -44,6 +44,14 @@ Code window where the extension is running with <kbd>Ctrl+R</kbd>.
    make use of H5Web's `H5WasmLocalFileProvider`, which has no file size
    restriction.
 
+## Code quality
+
+- `pnpm lint` - run all linting and code formatting commands
+- `pnpm lint:eslint` - lint all TS and JS files with ESLint
+- `pnpm lint:eslint --fix` - auto-fix linting issues
+- `pnpm lint:prettier` - check that all files have been formatted with Prettier
+- `pnpm lint:prettier --write` - format all files with Prettier
+
 ## Publishing
 
 To be allowed to

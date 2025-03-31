@@ -1,22 +1,24 @@
+import { readFileSync, unwatchFile, watchFile, writeFileSync } from 'node:fs';
+import { basename, dirname, join } from 'node:path';
+
+import { assertDefined } from '@h5web/app';
+import { type Manifest } from 'vite';
 import {
-  CustomDocument,
-  CustomReadonlyEditorProvider,
-  ExtensionContext,
-  Uri,
-  Webview,
-  WebviewPanel,
   commands,
+  type CustomDocument,
+  type CustomReadonlyEditorProvider,
+  type ExtensionContext,
+  Uri,
+  type Webview,
+  type WebviewPanel,
   window,
   workspace,
 } from 'vscode';
-import { join, basename, dirname } from 'node:path';
-import { writeFileSync, watchFile, unwatchFile } from 'node:fs';
-import { Message, MessageType } from './models';
+
+import { type Message, MessageType } from './models';
 import { PLUGINS } from './plugins';
 
-export default class H5WebViewer
-  implements CustomReadonlyEditorProvider<CustomDocument>
-{
+export default class H5WebViewer implements CustomReadonlyEditorProvider {
   public constructor(private readonly context: ExtensionContext) {}
 
   public async openCustomDocument(uri: Uri): Promise<CustomDocument> {
@@ -33,7 +35,7 @@ export default class H5WebViewer
     // Allow opening files outside of workspace
     // https://github.com/ucodkr/vscode-tiff/blob/9a4f976584fcba24e9f25680fcdb47fc8f97493f/src/tiffPreview.ts#L27-L30
     const resourceRoot = document.uri.with({
-      path: document.uri.path.replace(/\/[^/]+?\.\w+$/, '/'),
+      path: document.uri.path.replace(/\/[^/]+?\.\w+$/u, '/'),
     });
 
     webview.options = {
@@ -41,6 +43,7 @@ export default class H5WebViewer
       localResourceRoots: [extensionUri, resourceRoot],
     };
 
+    // eslint-disable-next-line require-atomic-updates
     webview.html = await this.getHtmlForWebview(webview);
 
     webview.onDidReceiveMessage(async (evt: Message) => {
@@ -54,16 +57,15 @@ export default class H5WebViewer
           data: { uri, name, size },
         });
 
-        function watcher() {
+        watchFile(document.uri.fsPath, () => {
           webview.postMessage({
             type: MessageType.FileInfo,
             data: { uri, name, size },
           });
-        }
+        });
 
-        watchFile(document.uri.fsPath, watcher);
         webviewPanel.onDidDispose(() => {
-          unwatchFile(document.uri.fsPath, watcher);
+          unwatchFile(document.uri.fsPath);
         });
 
         return;
@@ -88,8 +90,6 @@ export default class H5WebViewer
           commands.executeCommand('workbench.action.keepEditor'); // if current editor is in preview mode, keep it open
           window.showTextDocument(saveUri);
         }
-
-        return;
       }
     });
   }
@@ -98,8 +98,12 @@ export default class H5WebViewer
     const { extensionPath, extensionUri } = this.context;
     const { cspSource } = webview;
 
-    const manifest = require(join(extensionPath, 'dist/.vite/manifest.json'));
+    const manifest = JSON.parse(
+      readFileSync(join(extensionPath, 'dist/.vite/manifest.json'), 'utf-8'),
+    ) as Manifest;
+
     const { file: jsPath, css } = manifest['index.html'];
+    assertDefined(css);
     const [cssPath] = css;
 
     const jsPathOnDisk = Uri.file(join(extensionPath, 'dist', jsPath));
@@ -138,8 +142,8 @@ export default class H5WebViewer
 				<meta name="viewport" content="width=device-width, initial-scale=1.0">
 				<title>H5Web</title>
         <script id="plugins" type="application/json">${plugins}</script>
-        <script type="module" src="${jsUri}"></script>
-        <link rel="stylesheet" href="${cssUri}">
+        <script type="module" src="${jsUri.toString()}"></script>
+        <link rel="stylesheet" href="${cssUri.toString()}">
 			</head>
 			<body>
 				<div id="root"></div>
