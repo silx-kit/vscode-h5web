@@ -114,12 +114,12 @@ export default class H5WebViewer implements CustomReadonlyEditorProvider {
       readFileSync(join(extensionPath, 'dist/.vite/manifest.json'), 'utf-8'),
     ) as Manifest;
 
-    const { file: jsPath, css } = manifest['index.html'];
+    const [{ file: jsPath, css }] = Object.values(manifest);
     assertDefined(css);
     const [cssPath] = css;
 
-    const jsPathOnDisk = Uri.file(join(extensionPath, 'dist', jsPath));
-    const cssPathOnDisk = Uri.file(join(extensionPath, 'dist', cssPath));
+    const jsPathOnDisk = Uri.joinPath(extensionUri, 'dist', jsPath);
+    const cssPathOnDisk = Uri.joinPath(extensionUri, 'dist', cssPath);
 
     const jsUri = webview.asWebviewUri(jsPathOnDisk);
     const cssUri = webview.asWebviewUri(cssPathOnDisk);
