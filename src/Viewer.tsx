@@ -1,8 +1,9 @@
 import { App } from '@h5web/app';
 import { H5WasmBufferProvider } from '@h5web/h5wasm';
 import { suspend } from 'suspend-react';
-import { getExportURL, getPlugin } from './utils';
+
 import { type FileInfo } from '../extension/models.js';
+import { getExportURL, getPlugin } from './utils';
 
 interface Props {
   fileInfo: FileInfo;

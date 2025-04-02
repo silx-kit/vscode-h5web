@@ -1,7 +1,7 @@
-import { Plugin } from '@h5web/h5wasm';
-import bshuf from 'h5wasm-plugins/plugins/libH5Zbshuf.so';
+import { type Plugin } from '@h5web/h5wasm';
 import blosc from 'h5wasm-plugins/plugins/libH5Zblosc.so';
 import blosc2 from 'h5wasm-plugins/plugins/libH5Zblosc2.so';
+import bshuf from 'h5wasm-plugins/plugins/libH5Zbshuf.so';
 import bz2 from 'h5wasm-plugins/plugins/libH5Zbz2.so';
 import lz4 from 'h5wasm-plugins/plugins/libH5Zlz4.so';
 import lzf from 'h5wasm-plugins/plugins/libH5Zlzf.so';
