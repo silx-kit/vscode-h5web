@@ -8,6 +8,7 @@ import {
   type CustomDocument,
   type CustomReadonlyEditorProvider,
   type ExtensionContext,
+  type LogOutputChannel,
   Uri,
   type Webview,
   type WebviewPanel,
@@ -19,7 +20,10 @@ import { type Message, MessageType } from './models';
 import { PLUGINS } from './plugins';
 
 export default class H5WebViewer implements CustomReadonlyEditorProvider {
-  public constructor(private readonly context: ExtensionContext) {}
+  public constructor(
+    private readonly context: ExtensionContext,
+    private readonly outputChannel: LogOutputChannel,
+  ) {}
 
   public async openCustomDocument(uri: Uri): Promise<CustomDocument> {
     return { uri, dispose: () => {} };
@@ -88,7 +92,15 @@ export default class H5WebViewer implements CustomReadonlyEditorProvider {
 
           // Open output file in separate editor
           commands.executeCommand('workbench.action.keepEditor'); // if current editor is in preview mode, keep it open
-          window.showTextDocument(saveUri);
+
+          try {
+            await window.showTextDocument(saveUri);
+          } catch (error) {
+            this.outputChannel.warn(
+              'Unable to open file:',
+              error instanceof Error ? error.message : 'unknown error',
+            );
+          }
         }
       }
     });
