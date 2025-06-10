@@ -35,7 +35,7 @@
         "displayName": "H5Web",
         "selector": [
           {
-            "filenamePattern": "*.{h5,hdf,hdf5,nx,nxs,nx5,nexus,cxi,nc,nc4,loom,jld2}"
+            "filenamePattern": "*.{h5,hdf,hdf5,hf5,nx,nxs,nx5,nexus,cxi,nc,nc4,loom,jld2,h5ebsd,edaxh5,oh5,dream3d,geoh5}"
           }
         ],
         "priority": "default"

@@ -8,13 +8,17 @@ Explore and visualise **HDF5 files** directly in Visual Studio Code with
 ## Supported HDF5 file extensions
 
 Out of the box, the H5Web viewer is configured as the default editor for the
-following file extensions: `.h5`, `.hdf`, `.hdf5`, `.nx`
+following file extensions: `.h5`, `.hdf`, `.hdf5`, `hf5`, `.nx`
 ([NeXus](https://manual.nexusformat.org/index.html)), `.nxs`, `.nx5`, `.nexus`,
 `.cxi`
 ([Coherent X-ray Imaging](https://raw.githubusercontent.com/cxidb/CXI/master/cxi_file_format.pdf)),
 `.nc` ([netCDF4](https://docs.unidata.ucar.edu/nug/current/)), `.nc4`,
 [`.loom`](http://linnarssonlab.org/loompy/format/),
-[`jld2`](https://github.com/JuliaIO/JLD2.jl).
+[`.jld2`](https://github.com/JuliaIO/JLD2.jl),
+[`.h5ebsd`](https://link.springer.com/article/10.1186/2193-9772-3-4), `.edaxh5`,
+`.oh5`,
+[`.dream3d`](https://dream3d.bluequartz.net/Help/3_SupportedFileFormats/Native_DREAM3D_File_Format/),
+[`.geoh5`](https://mirageoscience-geoh5py.readthedocs-hosted.com/en/v0.8.0/content/geoh5_format/index.html).
 
 To add more extensions, don't hesitate to
 [open an issue](https://github.com/silx-kit/vscode-h5web/issues/new) or
