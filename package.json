@@ -63,7 +63,8 @@
     "lint:eslint": "eslint --max-warnings=0",
     "lint:prettier": "prettier --cache --check .",
     "vscode:prepublish": "pnpm build",
-    "pub": "pnpm dlx @vscode/vsce publish --no-dependencies"
+    "pub": "pnpm dlx @vscode/vsce publish --no-dependencies",
+    "pub:ovsx": "pnpm dlx ovsx publish --no-dependencies"
   },
   "dependencies": {
     "@h5web/app": "14.0.0",

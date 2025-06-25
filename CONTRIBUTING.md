@@ -54,6 +54,46 @@ Code window where the extension is running with <kbd>Ctrl+R</kbd>.
 
 ## Publishing
 
+The H5Web extension is published to the
+[Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=h5web.vscode-h5web)
+and to the [Open VSX Registry](https://open-vsx.org/). To be able to publish to
+these platforms, you must first follow the steps outlined in the respective
+sections below.
+
+Before publishing, remember to update the `CHANGELOG` and commit/push all
+changes. Then, run the following command to publish the extension to the VS Code
+Marketplace:
+
+```bash
+pnpm pub <patch|minor|major|x.y.z>
+```
+
+This will build the front-end app and the extension, bump the version in
+`package.json` and publish the extension to the Marketplace.
+
+> Do not use the `pnpm publish` command, as this is a reserved command for
+> publishing packages to the NPM repository.
+
+It will take a few minutes before the new version appears in the Marketplace,
+and it may take a while longer before you're able to update the extension in VS
+Code.
+
+Once you're able to install the new version and confirm that it works as
+expected, proceed with publishing the extension to the Open VSX Registry:
+
+```bash
+pnpm pub:ovsx -p <token>
+```
+
+> Do not pass a version number this time!
+
+Once the extension is published, push the tag created by the first `pnpm pub`
+command, and
+[publish a new release](https://github.com/silx-kit/vscode-h5web/releases/) on
+GitHub to advertise it.
+
+### Visual Studio Marketplace
+
 To be allowed to
 [publish an extension](https://code.visualstudio.com/api/working-with-extensions/publishing-extension)
 to the Visual Studio Marketplace you must have access to both the
@@ -73,24 +113,18 @@ pnpx vsce login h5web
 
 You're now ready to publish the extension to the Visual Studio Marketplace.
 
-Before doing so, remember to update the `CHANGELOG` and commit/push all changes.
-Then, run the following command to publish the extension:
+### Open VSX Registry
 
-```bash
-pnpm pub <patch|minor|major|x.y.z>
-```
+Users of VSCodium and other forks of VSCode may not be able to install
+extensions from the Visual Studio Marketplace. The Open VSX Registry is an
+alternative managed by the Eclipse Foundation.
 
-This will build the front-end app and the extension, bump the version in
-`package.json` and publish the extension to the Marketplace.
+To be allowed to
+[publish an extension](https://github.com/eclipse/openvsx/wiki/Publishing-Extensions)
+to the registry you must create an [Eclipse](https://www.eclipse.org/) account,
+link it to your Open VSX Registry account, create a personal access token, and
+be added as a member of the `h5web` namespace by an owner of that namespace.
 
-> Do not use the `pnpm publish` command, as this is a reserved command for
-> publishing packages to the NPM repository.
-
-It will take a few minutes before the new version appears in the Marketplace,
-and it may take a while longer before you're able to update the extension in VS
-Code.
-
-Once you're able to install the new version and confirm that it works as
-expected, push the tag created by the `pnpm pub` command, and
-[publish a new release](https://github.com/silx-kit/vscode-h5web/releases/) on
-GitHub to advertise it.
+> If the `h5web` namespace no longer has an owner, you may
+> [claim ownership](https://github.com/eclipse/openvsx/wiki/Namespace-Access#how-to-claim-a-namespace)
+> publicly.
