@@ -19,7 +19,8 @@ following file extensions: `.h5`, `.hdf`, `.hdf5`, `hf5`, `.nx`
 `.oh5`,
 [`.dream3d`](https://dream3d.bluequartz.net/Help/3_SupportedFileFormats/Native_DREAM3D_File_Format/),
 [`.geoh5`](https://mirageoscience-geoh5py.readthedocs-hosted.com/en/v0.8.0/content/geoh5_format/index.html),
-[`.h5oina`](https://github.com/oinanoanalysis/h5oina).
+[`.h5oina`](https://github.com/oinanoanalysis/h5oina),
+[`.h5ad`](https://anndata.readthedocs.io/en/latest/index.html).
 
 To add more extensions, don't hesitate to
 [open an issue](https://github.com/silx-kit/vscode-h5web/issues/new) or
