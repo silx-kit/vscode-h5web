@@ -63,7 +63,7 @@
     "lint:eslint": "eslint --max-warnings=0",
     "lint:prettier": "prettier --cache --check .",
     "vscode:prepublish": "pnpm build",
-    "pub": "pnpm dlx @vscode/vsce publish --no-dependencies",
+    "pub": "pnpm --allow-build=@vscode/vsce-sign --allow-build=keytar dlx @vscode/vsce publish --no-dependencies",
     "pub:ovsx": "pnpm dlx ovsx publish --no-dependencies"
   },
   "dependencies": {
