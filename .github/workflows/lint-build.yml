@@ -4,6 +4,9 @@ on:
   pull_request: # for PRs from forks
   push: # to start jobs asap when pushing a branch to open a PR
 
+permissions:
+  contents: read
+
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -20,12 +23,12 @@ jobs:
           node-version-file: 'package.json'
 
       - name: Install pnpm ⚙️
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v3
         with:
-          version: 9.x
+          version: 10
 
       - name: Restore cache 📌
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ~/setup-pnpm/node_modules/.bin/store
@@ -34,7 +37,7 @@ jobs:
             ${{ runner.os }}-
 
       - name: Install dependencies ⚙️
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
 
       - name: Lint 🤓
         run: pnpm lint
@@ -54,12 +57,12 @@ jobs:
           node-version-file: 'package.json'
 
       - name: Install pnpm ⚙️
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v3
         with:
-          version: 9.x
+          version: 10
 
       - name: Restore cache 📌
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ~/setup-pnpm/node_modules/.bin/store
@@ -68,7 +71,7 @@ jobs:
             ${{ runner.os }}-
 
       - name: Install dependencies ⚙️
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
 
       - name: Build 👓
         run: pnpm build

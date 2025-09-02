@@ -1,0 +1,17 @@
+# Enforce Node and pnpm versions specified in `engines` field of `package.json`
+engineStrict: true
+
+# Manage peer dependencies explicitly and predictibly
+strictPeerDependencies: true
+
+# Fail install if any dependency has unreviewed build scripts
+strictDepBuilds: true
+onlyBuiltDependencies:
+  - '@swc/core'
+  - 'esbuild'
+
+# Save exact dependency versions in `package.json`
+savePrefix: ''
+
+# Check that `node_modules` is up to date before running scripts
+verifyDepsBeforeRun: 'error'
