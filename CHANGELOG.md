@@ -1,5 +1,43 @@
 # Changelog
 
+## [v0.2.0](https://github.com/silx-kit/vscode-h5web/compare/v0.1.9...v0.2.0)
+
+> ⚠️ Requires VS Code **1.100.0** (January 2024) or later for
+> [ESM support](https://code.visualstudio.com/updates/v1_100#_esm-support-for-extensions).
+
+- 🛒 Publish to
+  [Open VSX Registry](https://open-vsx.org/extension/h5web/vscode-h5web) for
+  [VSCodium](https://vscodium.com/) users
+  [#62](https://github.com/silx-kit/vscode-h5web/issues/62)
+- 🧩 Open `.hf5`, `.h5ebsd`, `.h5oina`, `.h5ad`, `.edaxh5`, `.oh5`, `.dream3d`,
+  and `.geoh5` files in H5Web by default
+  [#60](https://github.com/silx-kit/vscode-h5web/pull/60)
+  [#65](https://github.com/silx-kit/vscode-h5web/pull/65)
+  [#66](https://github.com/silx-kit/vscode-h5web/pull/66)
+- ✨ Upgrade H5Web to
+  [v14.0.1](https://github.com/silx-kit/h5web/releases/tag/v14.0.1)
+  [#69](https://github.com/silx-kit/vscode-h5web/pull/69)
+  - Put `x`-axis values first in NeXus CSV exports for consistency with `XY` and
+    `XYE` files
+  - Add column with `x` indices when exporting 1D dataset to CSV for consistency
+    with `XY` files
+- ✨ Upgrade H5Web to
+  [v15.0.0](https://github.com/silx-kit/h5web/releases/tag/v15.0.0)
+  [#69](https://github.com/silx-kit/vscode-h5web/pull/69)
+  - `[H5WasmLocalFileProvider]` Open files _greater than 2GB_ in
+    **[SWMR read mode](https://support.hdfgroup.org/documentation/hdf5/latest/_s_w_m_r_t_n.html)**
+    - This is relevant only when the user is asked to browse for the file from
+      within the webview because it's too large to load in memory.
+    - ⚠️ While we don't expect this to cause any issue, please keep an eye out,
+      especially with older HDF5 files.
+  - `< NX Heatmap, NX Line >` Support `NXdata` group with
+    [**mixed real and complex signals**](https://myhdf5.hdfgroup.org/view?url=https%3A%2F%2Fwww.silx.org%2Fpub%2Fh5web%2Ffile_fail.nxs)
+  - `< Heatmap >` Allow flipping heatmap along `x` and `y` axes when viewing
+    complex dataset
+  - `< RGB >` The last dimension that holds the three channel values now appears
+    in the dimension mapper as a locked dimension (i.e. so users know that it's
+    there but cannot map an axis to it)
+
 ## [v0.1.9](https://github.com/silx-kit/vscode-h5web/compare/v0.1.7...v0.1.9)
 
 - ✏️ Open output file after exporting dataset/slice to CSV or JSON
