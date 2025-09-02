@@ -64,7 +64,7 @@
     "lint:prettier": "prettier --cache --check .",
     "vscode:prepublish": "pnpm build",
     "pub": "pnpm --allow-build=@vscode/vsce-sign --allow-build=keytar dlx @vscode/vsce publish --no-dependencies",
-    "pub:ovsx": "pnpm dlx ovsx publish --no-dependencies"
+    "pub:ovsx": "pnpm --allow-build=@vscode/vsce-sign --allow-build=keytar dlx ovsx publish --no-dependencies"
   },
   "dependencies": {
     "@h5web/app": "15.0.0",
