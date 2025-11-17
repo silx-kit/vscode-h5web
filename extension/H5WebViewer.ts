@@ -1,7 +1,6 @@
 import { readFileSync, unwatchFile, watchFile, writeFileSync } from 'node:fs';
 import { basename, dirname, join } from 'node:path';
 
-import { assertDefined } from '@h5web/app';
 import { type Manifest } from 'vite';
 import {
   commands,
@@ -115,9 +114,11 @@ export default class H5WebViewer implements CustomReadonlyEditorProvider {
     ) as Manifest;
 
     const [{ file: jsPath, css }] = Object.values(manifest);
-    assertDefined(css);
-    const [cssPath] = css;
+    if (css === undefined) {
+      throw new Error('Expected manifest to include `css` files array');
+    }
 
+    const [cssPath] = css;
     const jsPathOnDisk = Uri.joinPath(extensionUri, 'dist', jsPath);
     const cssPathOnDisk = Uri.joinPath(extensionUri, 'dist', cssPath);
 
