@@ -1,5 +1,43 @@
 # Changelog
 
+## [v0.2.1](https://github.com/silx-kit/vscode-h5web/compare/v0.2.0...v0.2.1)
+
+- 📂 Add **JPEG** compression plugin
+  [#73](https://github.com/silx-kit/vscode-h5web/pull/73)
+- ⚠️ Remove SZ compression plugin (unmaintained)
+  [#73](https://github.com/silx-kit/vscode-h5web/pull/73)
+- ✨ Upgrade H5Web to
+  [v16.0.0](https://github.com/silx-kit/h5web/releases/tag/v16.0.0)
+  [#73](https://github.com/silx-kit/vscode-h5web/pull/73)
+  - Support NeXus **`default_slice` attribute**
+  - Always show all supported NeXus visualizations instead of only the one for
+    the specified interpretation (e.g. both _NX Line_ and _NX Heatmap_ for 2D+
+    datasets)
+  - `< NX Line >` When auxiliary signals are present, show picker next to
+    visualization tabs to allow **showing/hiding any of the signals**, including
+    the main signal
+  - `< NX Heatmap >` Move signals picker to toolbar to match _NX Line_, as the
+    new drop-down interface is better suited to dealing with a large number of
+    auxiliary signals
+  - `< Line >` Support piecewise **constant interpolation**
+  - `< Line >` Move _Line_/_Points_/_Both_ control into new **_Aspect_ menu**
+  - `< Line >` Fix colors of auxiliary signals in dark mode
+  - `< NX Line >` Hide _Errors_ toggle from toolbar completely (instead of
+    disabling it) when there aren't any error values
+  - `< Line >` Never show _Errors_ toggle at all in toolbar, since there can
+    never be error values anyway
+  - `< Matrix >` Remove _Freeze indices_ toggle from toolbar — row/column
+    indices now always remain visible when scrolling
+  - Remember last known dimension mapping state for a specific visualization
+    more often
+  - Use _Opt_ instead of _Alt_ in interactions help menu on Mac
+  - Fix wrapping of value buttons in attributes inspector
+- ✨ Upgrade H5Web to
+  [v16.0.1](https://github.com/silx-kit/h5web/releases/tag/v16.0.1)
+  [#73](https://github.com/silx-kit/vscode-h5web/pull/73)
+  - Improve fallback message when no visualization is available for the selected
+    entity
+
 ## [v0.2.0](https://github.com/silx-kit/vscode-h5web/compare/v0.1.9...v0.2.0)
 
 > ⚠️ Requires VS Code **1.100.0** (January 2024) or later for
