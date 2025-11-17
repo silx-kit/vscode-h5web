@@ -3,9 +3,9 @@ import blosc from 'h5wasm-plugins/plugins/libH5Zblosc.so';
 import blosc2 from 'h5wasm-plugins/plugins/libH5Zblosc2.so';
 import bshuf from 'h5wasm-plugins/plugins/libH5Zbshuf.so';
 import bz2 from 'h5wasm-plugins/plugins/libH5Zbz2.so';
+import jpeg from 'h5wasm-plugins/plugins/libH5Zjpeg.so';
 import lz4 from 'h5wasm-plugins/plugins/libH5Zlz4.so';
 import lzf from 'h5wasm-plugins/plugins/libH5Zlzf.so';
-import szf from 'h5wasm-plugins/plugins/libH5Zszf.so';
 import zfp from 'h5wasm-plugins/plugins/libH5Zzfp.so';
 import zstd from 'h5wasm-plugins/plugins/libH5Zzstd.so';
 
@@ -14,9 +14,9 @@ export const PLUGINS = {
   blosc,
   blosc2,
   bz2,
+  jpeg,
   lz4,
   lzf,
-  szf,
   zfp,
   zstd,
 } satisfies Record<Plugin, string>;
