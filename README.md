@@ -57,7 +57,7 @@ follows:
 
 The extension supports reading datasets compressed with any of the plugins
 available in
-[h5wasm-plugins@0.0.3](https://github.com/h5wasm/h5wasm-plugins/tree/v0.0.3?tab=readme-ov-file#included-plugins).
+[h5wasm-plugins@0.2.1](https://github.com/h5wasm/h5wasm-plugins/tree/v0.2.1?tab=readme-ov-file#included-plugins).
 
 ## Known limitations
 
