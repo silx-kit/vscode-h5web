@@ -1,4 +1,4 @@
-@import 'normalize.css';
+@import 'modern-normalize/modern-normalize.css';
 @import '@h5web/app/styles.css';
 
 #root {
