@@ -1,11 +1,10 @@
-import react from '@vitejs/plugin-react-swc';
+import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
   plugins: [react()],
   publicDir: false,
   build: {
-    target: 'es2020', // required by @h5web/h5wasm for BigInt `123n` notation support
     sourcemap: 'inline', // can't load external sourcemaps from webviews
     emptyOutDir: true,
     manifest: true, // generate manifest so extension can find output files

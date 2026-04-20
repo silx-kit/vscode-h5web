@@ -25,7 +25,7 @@
   ],
   "engines": {
     "node": "24.x",
-    "pnpm": ">=10.16",
+    "pnpm": ">=10.26",
     "vscode": ">=1.100.0"
   },
   "type": "module",
@@ -69,26 +69,26 @@
   "dependencies": {
     "@h5web/app": "16.0.1",
     "@h5web/h5wasm": "16.0.1",
-    "@react-hookz/web": "25.1.1",
+    "@react-hookz/web": "25.2.0",
     "h5wasm-plugins": "0.2.0",
-    "normalize.css": "8.0.1",
+    "modern-normalize": "3.0.1",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-error-boundary": "6.0.0",
     "suspend-react": "0.1.3"
   },
   "devDependencies": {
-    "@esrf/eslint-config": "1.6.1",
-    "@types/node": "^24.10.1",
-    "@types/react": "^18.3.26",
+    "@esrf/eslint-config": "2.3.0",
+    "@types/node": "^24.12.2",
+    "@types/react": "^18.3.28",
     "@types/react-dom": "^18.3.7",
     "@types/vscode": "~1.100.0",
     "@types/vscode-webview": "~1.57.5",
-    "@vitejs/plugin-react-swc": "4.0.1",
-    "esbuild": "0.27.0",
-    "eslint": "9.38.0",
-    "prettier": "3.6.2",
+    "@vitejs/plugin-react": "6.0.1",
+    "esbuild": "0.28.0",
+    "eslint": "9.39.4",
+    "prettier": "3.8.3",
     "typescript": "5.9.3",
-    "vite": "7.2.2"
+    "vite": "8.0.7"
   }
 }
