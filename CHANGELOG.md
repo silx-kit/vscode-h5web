@@ -1,5 +1,44 @@
 # Changelog
 
+## dev
+
+- ✨ Upgrade H5Web to
+  [v17.0.0](https://github.com/silx-kit/h5web/releases/tag/v17.0.0)
+  - Improve explorer **sidebar resizing** (persist size, double click to reset,
+    drag to open/close, keyboard accessibility, etc.)
+  - Maintain **zoom level** and pan position when possible when changing
+    dataset/visualization/etc.
+  - Improve **explorer icons**
+  - Support
+    [**bitgroom**](https://myhdf5.hdfgroup.org/view?url=https%3A%2F%2Fwww.silx.org%2Fpub%2Fh5web%2Ffilters%2Fbitgroom.h5)
+    and
+    [**bitround**](https://myhdf5.hdfgroup.org/view?url=https%3A%2F%2Fwww.silx.org%2Fpub%2Fh5web%2Ffilters%2Fbitround.h5)
+    compression filters
+  - `< Heatmap, Line, NX Heatmap, NX Line >` Add support for
+    [NetCDF attributes](https://docs.unidata.ucar.edu/netcdf-c/current/attribute_conventions.html)
+    **`valid_min`**, **`valid_max`** and **`valid_range`**, and improve support
+    for **`_FillValue`**
+  - `< Complex Line >` Support **unwrapping** complex phase values by removing
+    2π discontinuities
+  - `< RGB, NX RGB >` Support **RGBA/BGRA** images and **`rgba-image`** NeXus
+    interpretation
+  - `< Scalar >` Support array datasets not supported by other visualizations,
+    including **stacks of binary JPEG/PNG images** (cf.
+    [frogs.h5](https://myhdf5.hdfgroup.org/view?url=https%3A%2F%2Fwww.silx.org%2Fpub%2Fh5web%2Ffrogs.h5))
+  - Show "NX" badges in explorer where NeXus visualizations are actually known
+    to be supported
+  - Show error preemptively when there's not enough memory available to read
+    data
+  - `< NX Scatter >` Force ascending axes regardless of order of axes values
+  - Fix ordering of compound fields with number-like names
+  - Fix flickering of toolbar controls
+  - Disable <kbd>Ctrl</kbd>+left click context menu on Mac to fix
+    selection-based zoom interactions
+  - Fix errors with some compression filters
+
+For the full list of changes, please refer to the
+**[release notes for v17.0.0](https://github.com/silx-kit/h5web/releases/tag/v17.0.0)**
+
 ## [v0.2.1](https://github.com/silx-kit/vscode-h5web/compare/v0.2.0...v0.2.1)
 
 - 📂 Add **JPEG** compression plugin
