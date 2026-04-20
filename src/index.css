@@ -1,6 +1,10 @@
 @import 'modern-normalize/modern-normalize.css';
 @import '@h5web/app/styles.css';
 
+:root {
+  scrollbar-color: unset; /* https://github.com/microsoft/vscode/issues/213045 */
+}
+
 #root {
   height: 100vh;
 }

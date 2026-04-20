@@ -1,4 +1,6 @@
 import { type Plugin } from '@h5web/h5wasm';
+import bitgroom from 'h5wasm-plugins/plugins/libH5Zbitgroom.so';
+import bitround from 'h5wasm-plugins/plugins/libH5Zbitround.so';
 import blosc from 'h5wasm-plugins/plugins/libH5Zblosc.so';
 import blosc2 from 'h5wasm-plugins/plugins/libH5Zblosc2.so';
 import bshuf from 'h5wasm-plugins/plugins/libH5Zbshuf.so';
@@ -11,6 +13,8 @@ import zstd from 'h5wasm-plugins/plugins/libH5Zzstd.so';
 
 export const PLUGINS = {
   bshuf,
+  bitgroom,
+  bitround,
   blosc,
   blosc2,
   bz2,

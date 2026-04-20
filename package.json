@@ -67,10 +67,10 @@
     "pub:ovsx": "pnpm --allow-build=@vscode/vsce-sign --allow-build=keytar dlx ovsx publish --no-dependencies"
   },
   "dependencies": {
-    "@h5web/app": "16.0.1",
-    "@h5web/h5wasm": "16.0.1",
+    "@h5web/app": "17.0.0",
+    "@h5web/h5wasm": "17.0.0",
     "@react-hookz/web": "25.2.0",
-    "h5wasm-plugins": "0.2.0",
+    "h5wasm-plugins": "0.3.0",
     "modern-normalize": "3.0.1",
     "react": "18.3.1",
     "react-dom": "18.3.1",

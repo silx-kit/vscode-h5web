@@ -9,17 +9,17 @@ importers:
   .:
     dependencies:
       '@h5web/app':
-        specifier: 16.0.1
-        version: 16.0.1(@types/react-dom@18.3.7(@types/react@18.3.28))(@types/react@18.3.28)(axios@1.7.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.9.3)
+        specifier: 17.0.0
+        version: 17.0.0(@types/react-dom@18.3.7(@types/react@18.3.28))(@types/react@18.3.28)(axios@1.7.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.9.3)
       '@h5web/h5wasm':
-        specifier: 16.0.1
-        version: 16.0.1(@h5web/app@16.0.1(@types/react-dom@18.3.7(@types/react@18.3.28))(@types/react@18.3.28)(axios@1.7.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.9.3))(@types/react@18.3.28)(h5wasm-plugins@0.2.0)(react@18.3.1)(typescript@5.9.3)
+        specifier: 17.0.0
+        version: 17.0.0(@h5web/app@17.0.0(@types/react-dom@18.3.7(@types/react@18.3.28))(@types/react@18.3.28)(axios@1.7.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.9.3))(@types/react@18.3.28)(h5wasm-plugins@0.3.0(h5wasm@0.10.1))(react@18.3.1)(typescript@5.9.3)
       '@react-hookz/web':
         specifier: 25.2.0
         version: 25.2.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       h5wasm-plugins:
-        specifier: 0.2.0
-        version: 0.2.0
+        specifier: 0.3.0
+        version: 0.3.0(h5wasm@0.10.1)
       modern-normalize:
         specifier: 3.0.1
         version: 3.0.1
@@ -536,8 +536,8 @@ packages:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
 
-  '@floating-ui/react@0.27.16':
-    resolution: {integrity: sha512-9O8N4SeG2z++TSM8QA/KTeKFBVCNEz/AGS7gWPJf6KFRzmRWixFRnCnkPHRDwSVZW6QPDO6uT0P2SpWNKCc9/g==}
+  '@floating-ui/react@0.27.19':
+    resolution: {integrity: sha512-31B8h5mm8YxotlE7/AU/PhNAl8eWxAmjL/v2QOxroDNkTFLk3Uu82u63N3b6TXa4EGJeeZLVcd/9AlNlVqzeog==}
     peerDependencies:
       react: '>=17.0.0'
       react-dom: '>=17.0.0'
@@ -545,8 +545,8 @@ packages:
   '@floating-ui/utils@0.2.11':
     resolution: {integrity: sha512-RiB/yIh78pcIxl6lLMG0CgBXAZ2Y0eVHqMPYugu+9U0AeT6YBeiJpf7lbdJNIugFP5SIjwNRgo4DhR1Qxi26Gg==}
 
-  '@h5web/app@16.0.1':
-    resolution: {integrity: sha512-hOsT3FvMRUghGo4mz4AucOJMaKzYgUFrPG8XKgy51GNYdX7WNJnd9N0T6T4wNVss8eckqn+AMdom7A6hFIBkgg==}
+  '@h5web/app@17.0.0':
+    resolution: {integrity: sha512-HIKNxBsDk1yyL/ntrgo0sXfA2jKYiKAn+EXEXkpw7iLp8gnTHx2UNKwdSFRHaxoZ6QsrQ36a1qCfASsnlJDzog==}
     peerDependencies:
       '@types/react': 18.x
       '@types/react-dom': 18.x
@@ -564,12 +564,12 @@ packages:
       typescript:
         optional: true
 
-  '@h5web/h5wasm@16.0.1':
-    resolution: {integrity: sha512-y3jTnZTa0WB1524PfM26nevR8bHbJh/61T/faqr+tDNkMfSSXPjlUPxCPTx2TnffMoNkgEHxdX7CVl4n4Fb09w==}
+  '@h5web/h5wasm@17.0.0':
+    resolution: {integrity: sha512-FjgiHD5o0qhp7wyZc8qkhXDnwfA4/3o5QgPm1bFkt3HPGvQWOAgEKH/IeKUrMgxlEUL1xnxqEjqrq0s8XvIt1w==}
     peerDependencies:
-      '@h5web/app': 16.0.1
+      '@h5web/app': 17.0.0
       '@types/react': 18.x
-      h5wasm-plugins: 0.2.0
+      h5wasm-plugins: 0.3.0
       react: 18.x
       typescript: '>=4.5'
     peerDependenciesMeta:
@@ -580,8 +580,8 @@ packages:
       typescript:
         optional: true
 
-  '@h5web/lib@16.0.1':
-    resolution: {integrity: sha512-uG8dAgKQKe6I08UZWGzc+d25qW4S97ILLgvMFHyy4fok4scEQClpVQN5VFBIydvrVJdu40bDgGW1DbeSOjRf/A==}
+  '@h5web/lib@17.0.0':
+    resolution: {integrity: sha512-w0g5XnyU4fauZqHbt7IuumJT3BaAbGXV8lAgtYeyxY1OCLme4hKB802u2Qvwn8Epjr/P3T27oITowc4OK/gDWw==}
     peerDependencies:
       '@react-three/fiber': 8.x
       '@types/react': 18.x
@@ -1830,11 +1830,16 @@ packages:
     resolution: {integrity: sha512-ZUKRh6/kUFoAiTAtTYPZJ3hw9wNxx+BIBOijnlG9PnrJsCcSjs1wyyD6vJpaYtgnzDrKYRSqf3OO6Rfa93xsRg==}
     engines: {node: '>= 0.4'}
 
-  h5wasm-plugins@0.2.0:
-    resolution: {integrity: sha512-bT3sW1OSvPBFDCqGYDMyjUIEbDRxx5/8k5AKRYEmog+kW6QIF0MHUhyGNFoeTOvjtjbLYlh6FKcgPiqEE4VLRw==}
+  h5wasm-plugins@0.3.0:
+    resolution: {integrity: sha512-0L3XSaNa44sWQYfyI6b8aNm4uORJaFV9Q/+6DY/4J7M8lyO7B7ZBZCh4D7BVHpIK5XrfensRWOnuXArugMqfaQ==}
+    peerDependencies:
+      h5wasm: ^0.10.1
+    peerDependenciesMeta:
+      h5wasm:
+        optional: true
 
-  h5wasm@0.8.7:
-    resolution: {integrity: sha512-7TJKTSXnZobVZYSywEsy3PnIqTDsyIX8i/WNmtnL6it+K/2OLcjZAg0Fpx+LUjyc9L/HqmWD8qYBd0Nf/dYwZA==}
+  h5wasm@0.10.1:
+    resolution: {integrity: sha512-VxKLoNcPmn/4j6wWuf81gRGzcNjW1aHKtNgRp6ZBeYd6RoWmN3tk5HB6E3nPYsc3YhGT+o07xz1tK6wdMuPMiw==}
 
   has-bigints@1.1.0:
     resolution: {integrity: sha512-R3pbpkcIqv2Pm3dUwgjclDRVmWpTJW2DcMzcIhEXEx1oh/CEMObMm3KLmRJOdvhM7o4uQBnwr8pzRK2sJWIqfg==}
@@ -2167,9 +2172,6 @@ packages:
   lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
 
-  lodash.throttle@4.1.1:
-    resolution: {integrity: sha512-wIkUCfVKpVsWo3JSZlc+8MB5it+2AN5W8J7YVMST30UrvcQNZ1Okbj+rbVniijTWE6FGYy4XJq/rHkas8qJMLQ==}
-
   lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
 
@@ -2234,8 +2236,8 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  nanoid@5.1.6:
-    resolution: {integrity: sha512-c7+7RQ+dMB5dPwwCp4ee1/iV/q2P6aK1mTZcfr1BTuVlyW9hJYiMPybJCcnBlQtuSmTIWNeazm/zqNoZSSElBg==}
+  nanoid@5.1.7:
+    resolution: {integrity: sha512-ua3NDgISf6jdwezAheMOk4mbE1LXjm1DfMUDMuJf4AqxLFK3ccGpgWizwa5YV7Yz9EpXwEaWoRXSb/BnV0t5dQ==}
     engines: {node: ^18 || >=20}
     hasBin: true
 
@@ -2378,6 +2380,11 @@ packages:
     peerDependencies:
       react: '>=16.13.1'
 
+  react-error-boundary@6.1.1:
+    resolution: {integrity: sha512-BrYwPOdXi5mqkk5lw+Uvt0ThHx32rCt3BkukS4X23A2AIWDPSGX6iaWTc0y9TU/mHDA/6qOSGel+B2ERkOvD1w==}
+    peerDependencies:
+      react: ^18.0.0 || ^19.0.0
+
   react-icons@5.4.0:
     resolution: {integrity: sha512-7eltJxgVt7X64oHh6wSWNwwbKTCtMfK35hcjvJS0yxEAhPM8oUKdS3+kqaW1vicIltw+kR2unHaa12S9pPALoQ==}
     peerDependencies:
@@ -2392,8 +2399,8 @@ packages:
   react-is@18.3.1:
     resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
 
-  react-keyed-flatten-children@5.0.1:
-    resolution: {integrity: sha512-bZhTocogwo+q6zz3+HAQexckXhm+Ko8CaujKO6A138kVpRtF4xN8OmLE7F1Qv9YcDJrZ8gPXkJdM/VgcKjJimg==}
+  react-keyed-flatten-children@5.1.1:
+    resolution: {integrity: sha512-+DXMhjG0nbKq7AuWvAp1NUWCcg4jsUuBCdtDW8ySl45m3+MTjbXbR+TxvoM/1dTH7reSDqksBipkc/e/gpUnDg==}
     peerDependencies:
       react: '>=18.0.0'
       react-is: '>=18.0.0'
@@ -2410,10 +2417,11 @@ packages:
     peerDependencies:
       react: ^18.0.0
 
-  react-reflex@4.2.7:
-    resolution: {integrity: sha512-MojP7nzowxoJLGp060fIaQ1oF+Aah/kJn29kotKCmk3fsp2YxO8NmPPoS6XagPe8DAL7PzK6woJ/HlBlW+dSwg==}
+  react-resizable-panels@4.9.0:
+    resolution: {integrity: sha512-sEl+hA6y9/kxa0aPlrUC+G1lcShAf/PiIjoeC8kWXxa53RfAVplVCIxEl01Nwa4L2iRa5JXBXq1/mI8ch6qOZQ==}
     peerDependencies:
-      react: ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
 
   react-slider@2.0.6:
     resolution: {integrity: sha512-gJxG1HwmuMTJ+oWIRCmVWvgwotNCbByTwRkFZC6U4MBsHqJBmxwbYRJUmxy4Tke1ef8r9jfXjgkmY/uHOCEvbA==}
@@ -2429,8 +2437,8 @@ packages:
       react-dom:
         optional: true
 
-  react-window@2.2.1:
-    resolution: {integrity: sha512-jrUMKDLW1B4yX4OU0QjdytGgWIg6wqWfiTe86lUhFsCUltkNNB/zYxFU0DTKAzBOMRbkpLVWS1IkLvQeO4L7nw==}
+  react-window@2.2.3:
+    resolution: {integrity: sha512-gTRqQYC8ojbiXyd9duYFiSn2TJw0ROXCgYjenOvNKITWzK0m0eCvkUsEUM08xvydkMh7ncp+LE0uS3DeNGZxnQ==}
     peerDependencies:
       react: ^18.0.0 || ^19.0.0
       react-dom: ^18.0.0 || ^19.0.0
@@ -2644,8 +2652,8 @@ packages:
   tabbable@6.3.0:
     resolution: {integrity: sha512-EIHvdY5bPLuWForiR/AN2Bxngzpuwn1is4asboytXtpTgsArc+WmSJKVLlhdh71u7jFcryDqB2A8lQvj78MkyQ==}
 
-  three@0.181.0:
-    resolution: {integrity: sha512-KGf6EOCOQGshXeleKxpxhbowQwAXR2dLlD93egHtZ9Qmk07Saf8sXDR+7wJb53Z1ORZiatZ4WGST9UsVxhHEbg==}
+  three@0.182.0:
+    resolution: {integrity: sha512-GbHabT+Irv+ihI1/f5kIIsZ+Ef9Sl5A1Y7imvS5RQjWgtTPfPnZ43JmlYI7NtCRDK9zir20lQpfg8/9Yd02OvQ==}
 
   tiny-invariant@1.3.3:
     resolution: {integrity: sha512-+FbBPE1o9QAYvviau/qC5SE3caw21q3xkvWKBtja5vgqOWIHHJ3ioaq1VPfn/Szqctz2bU/oYeKd9/z5BL+PVg==}
@@ -2830,8 +2838,8 @@ packages:
       react:
         optional: true
 
-  zustand@5.0.8:
-    resolution: {integrity: sha512-gyPKpIaxY9XcO2vSMrLbiER7QMAMGOQZVRdJ6Zi782jkbzZygq5GI9nG8g+sMgitRtndwaBSl7uiqC49o1SSiw==}
+  zustand@5.0.12:
+    resolution: {integrity: sha512-i77ae3aZq4dhMlRhJVCYgMLKuSiZAaUPAct2AksxQ+gOtimhGMdXljRT21P5BNpeT4kXlLIckvkPM029OljD7g==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@types/react': '>=18.0.0'
@@ -3221,7 +3229,7 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@floating-ui/react@0.27.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@floating-ui/react@0.27.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@floating-ui/react-dom': 2.1.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@floating-ui/utils': 0.2.11
@@ -3231,23 +3239,23 @@ snapshots:
 
   '@floating-ui/utils@0.2.11': {}
 
-  '@h5web/app@16.0.1(@types/react-dom@18.3.7(@types/react@18.3.28))(@types/react@18.3.28)(axios@1.7.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.9.3)':
+  '@h5web/app@17.0.0(@types/react-dom@18.3.7(@types/react@18.3.28))(@types/react@18.3.28)(axios@1.7.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.9.3)':
     dependencies:
-      '@h5web/lib': 16.0.1(@react-three/fiber@8.18.0(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.181.0))(@types/react-dom@18.3.7(@types/react@18.3.28))(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.181.0)(typescript@5.9.3)
+      '@h5web/lib': 17.0.0(@react-three/fiber@8.18.0(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.182.0))(@types/react-dom@18.3.7(@types/react@18.3.28))(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.182.0)(typescript@5.9.3)
       '@react-hookz/web': 25.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@react-three/fiber': 8.18.0(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.181.0)
+      '@react-three/fiber': 8.18.0(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.182.0)
       '@types/d3-format': 3.0.4
       '@types/ndarray': 1.0.14
-      d3-format: 3.1.0
+      d3-format: 3.1.2
       ndarray: 1.0.19
       ndarray-ops: 1.2.2
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-      react-error-boundary: 6.0.0(react@18.3.1)
+      react-error-boundary: 6.1.1(react@18.3.1)
       react-icons: 5.4.0(react@18.3.1)
-      react-reflex: 4.2.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      three: 0.181.0
-      zustand: 5.0.8(@types/react@18.3.28)(react@18.3.1)
+      react-resizable-panels: 4.9.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      three: 0.182.0
+      zustand: 5.0.12(@types/react@18.3.28)(react@18.3.1)
     optionalDependencies:
       '@types/react': 18.3.28
       '@types/react-dom': 18.3.7(@types/react@18.3.28)
@@ -3264,23 +3272,23 @@ snapshots:
       - react-native
       - use-sync-external-store
 
-  '@h5web/h5wasm@16.0.1(@h5web/app@16.0.1(@types/react-dom@18.3.7(@types/react@18.3.28))(@types/react@18.3.28)(axios@1.7.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.9.3))(@types/react@18.3.28)(h5wasm-plugins@0.2.0)(react@18.3.1)(typescript@5.9.3)':
+  '@h5web/h5wasm@17.0.0(@h5web/app@17.0.0(@types/react-dom@18.3.7(@types/react@18.3.28))(@types/react@18.3.28)(axios@1.7.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.9.3))(@types/react@18.3.28)(h5wasm-plugins@0.3.0(h5wasm@0.10.1))(react@18.3.1)(typescript@5.9.3)':
     dependencies:
-      '@h5web/app': 16.0.1(@types/react-dom@18.3.7(@types/react@18.3.28))(@types/react@18.3.28)(axios@1.7.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.9.3)
+      '@h5web/app': 17.0.0(@types/react-dom@18.3.7(@types/react@18.3.28))(@types/react@18.3.28)(axios@1.7.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.9.3)
       comlink: 4.4.2
-      h5wasm: 0.8.7
-      nanoid: 5.1.6
+      h5wasm: 0.10.1
+      nanoid: 5.1.7
       react: 18.3.1
     optionalDependencies:
       '@types/react': 18.3.28
-      h5wasm-plugins: 0.2.0
+      h5wasm-plugins: 0.3.0(h5wasm@0.10.1)
       typescript: 5.9.3
 
-  '@h5web/lib@16.0.1(@react-three/fiber@8.18.0(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.181.0))(@types/react-dom@18.3.7(@types/react@18.3.28))(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.181.0)(typescript@5.9.3)':
+  '@h5web/lib@17.0.0(@react-three/fiber@8.18.0(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.182.0))(@types/react-dom@18.3.7(@types/react@18.3.28))(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.182.0)(typescript@5.9.3)':
     dependencies:
-      '@floating-ui/react': 0.27.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@floating-ui/react': 0.27.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-hookz/web': 25.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@react-three/fiber': 8.18.0(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.181.0)
+      '@react-three/fiber': 8.18.0(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.182.0)
       '@types/d3-array': 3.2.2
       '@types/d3-color': 3.1.3
       '@types/d3-format': 3.0.4
@@ -3297,7 +3305,7 @@ snapshots:
       '@visx/tooltip': 3.12.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       d3-array: 3.2.4
       d3-color: 3.1.0
-      d3-format: 3.1.0
+      d3-format: 3.1.2
       d3-interpolate: 3.0.1
       d3-scale: 4.0.2
       d3-scale-chromatic: 3.1.0
@@ -3307,12 +3315,12 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
       react-icons: 5.4.0(react@18.3.1)
       react-is: 18.3.1
-      react-keyed-flatten-children: 5.0.1(react-is@18.3.1)(react@18.3.1)
+      react-keyed-flatten-children: 5.1.1(react-is@18.3.1)(react@18.3.1)
       react-measure: 2.5.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-slider: 2.0.6(react@18.3.1)
-      react-window: 2.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      three: 0.181.0
-      zustand: 5.0.8(@types/react@18.3.28)(react@18.3.1)
+      react-window: 2.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      three: 0.182.0
+      zustand: 5.0.12(@types/react@18.3.28)(react@18.3.1)
     optionalDependencies:
       '@types/react': 18.3.28
       '@types/react-dom': 18.3.7(@types/react@18.3.28)
@@ -3373,7 +3381,7 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@react-three/fiber@8.18.0(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.181.0)':
+  '@react-three/fiber@8.18.0(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.182.0)':
     dependencies:
       '@babel/runtime': 7.28.4
       '@types/react-reconciler': 0.26.7
@@ -3386,7 +3394,7 @@ snapshots:
       react-use-measure: 2.1.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       scheduler: 0.21.0
       suspend-react: 0.1.3(react@18.3.1)
-      three: 0.181.0
+      three: 0.182.0
       zustand: 3.7.2(react@18.3.1)
     optionalDependencies:
       react-dom: 18.3.1(react@18.3.1)
@@ -4794,11 +4802,11 @@ snapshots:
 
   gopd@1.2.0: {}
 
-  h5wasm-plugins@0.2.0:
-    dependencies:
-      h5wasm: 0.8.7
+  h5wasm-plugins@0.3.0(h5wasm@0.10.1):
+    optionalDependencies:
+      h5wasm: 0.10.1
 
-  h5wasm@0.8.7: {}
+  h5wasm@0.10.1: {}
 
   has-bigints@1.1.0: {}
 
@@ -5092,8 +5100,6 @@ snapshots:
 
   lodash.merge@4.6.2: {}
 
-  lodash.throttle@4.1.1: {}
-
   lodash@4.17.21: {}
 
   loose-envify@1.4.0:
@@ -5146,7 +5152,7 @@ snapshots:
 
   nanoid@3.3.11: {}
 
-  nanoid@5.1.6: {}
+  nanoid@5.1.7: {}
 
   natural-compare@1.4.0: {}
 
@@ -5292,6 +5298,10 @@ snapshots:
       '@babel/runtime': 7.28.4
       react: 18.3.1
 
+  react-error-boundary@6.1.1(react@18.3.1):
+    dependencies:
+      react: 18.3.1
+
   react-icons@5.4.0(react@18.3.1):
     dependencies:
       react: 18.3.1
@@ -5302,7 +5312,7 @@ snapshots:
 
   react-is@18.3.1: {}
 
-  react-keyed-flatten-children@5.0.1(react-is@18.3.1)(react@18.3.1):
+  react-keyed-flatten-children@5.1.1(react-is@18.3.1)(react@18.3.1):
     dependencies:
       react: 18.3.1
       react-is: 18.3.1
@@ -5322,15 +5332,10 @@ snapshots:
       react: 18.3.1
       scheduler: 0.21.0
 
-  react-reflex@4.2.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-resizable-panels@4.9.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      '@babel/runtime': 7.28.4
-      lodash.throttle: 4.1.1
-      prop-types: 15.8.1
       react: 18.3.1
-      react-measure: 2.5.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-    transitivePeerDependencies:
-      - react-dom
+      react-dom: 18.3.1(react@18.3.1)
 
   react-slider@2.0.6(react@18.3.1):
     dependencies:
@@ -5343,7 +5348,7 @@ snapshots:
     optionalDependencies:
       react-dom: 18.3.1(react@18.3.1)
 
-  react-window@2.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-window@2.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -5647,7 +5652,7 @@ snapshots:
 
   tabbable@6.3.0: {}
 
-  three@0.181.0: {}
+  three@0.182.0: {}
 
   tiny-invariant@1.3.3: {}
 
@@ -5819,7 +5824,7 @@ snapshots:
     optionalDependencies:
       react: 18.3.1
 
-  zustand@5.0.8(@types/react@18.3.28)(react@18.3.1):
+  zustand@5.0.12(@types/react@18.3.28)(react@18.3.1):
     optionalDependencies:
       '@types/react': 18.3.28
       react: 18.3.1
