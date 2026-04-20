@@ -1,9 +1,10 @@
 # Changelog
 
-## dev
+## [v0.2.2](https://github.com/silx-kit/vscode-h5web/compare/v0.2.1...v0.2.2)
 
 - ✨ Upgrade H5Web to
   [v17.0.0](https://github.com/silx-kit/h5web/releases/tag/v17.0.0)
+  [#75](https://github.com/silx-kit/vscode-h5web/pull/75)
   - Improve explorer **sidebar resizing** (persist size, double click to reset,
     drag to open/close, keyboard accessibility, etc.)
   - Maintain **zoom level** and pan position when possible when changing
