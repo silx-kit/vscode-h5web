@@ -25,7 +25,7 @@
   ],
   "engines": {
     "node": "24.x",
-    "pnpm": ">=10.26",
+    "pnpm": "11.x",
     "vscode": ">=1.100.0"
   },
   "type": "module",
