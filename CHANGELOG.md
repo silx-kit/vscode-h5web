@@ -2,6 +2,9 @@
 
 ## dev
 
+- 🐛 Stop leaving a copy of every file opened from the explorer in VS Code's
+  webview cache, where copies accumulated with no size limit and were never
+  evicted
 - 🧩 Open `.nde` files in H5Web by default
 
 ## [v0.2.2](https://github.com/silx-kit/vscode-h5web/compare/v0.2.1...v0.2.2)
