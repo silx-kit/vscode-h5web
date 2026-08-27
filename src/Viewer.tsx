@@ -13,9 +13,8 @@ function Viewer(props: Props) {
   const { fileInfo } = props;
 
   const buffer = suspend(async () => {
-    // Ask for the file as a range, so that VS Code's webview service worker
-    // does not keep a copy of it. It caches a plain GET in full and forever,
-    // but serves a range request `no-store` - https://github.com/microsoft/vscode/blob/main/src/vs/workbench/contrib/webview/browser/pre/service-worker.js
+    // Make a range request so that VS Code's webview service worker doesn't keep a copy of it
+    // https://github.com/microsoft/vscode/blob/a585a29d941f79bc3c6bde782ad68997cd99a3c4/src/vs/workbench/contrib/webview/browser/pre/service-worker.js#L443
     const res = await fetch(fileInfo.uri, { headers: { Range: 'bytes=0-' } });
     return res.arrayBuffer();
   }, [fileInfo]);
