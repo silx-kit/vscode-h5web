@@ -13,7 +13,9 @@ function Viewer(props: Props) {
   const { fileInfo } = props;
 
   const buffer = suspend(async () => {
-    const res = await fetch(fileInfo.uri);
+    // Make a range request so that VS Code's webview service worker doesn't keep a copy of it
+    // https://github.com/microsoft/vscode/blob/a585a29d941f79bc3c6bde782ad68997cd99a3c4/src/vs/workbench/contrib/webview/browser/pre/service-worker.js#L443
+    const res = await fetch(fileInfo.uri, { headers: { Range: 'bytes=0-' } });
     return res.arrayBuffer();
   }, [fileInfo]);
 
