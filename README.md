@@ -67,7 +67,22 @@ available in
 This extension uses [h5wasm](https://github.com/usnistgov/h5wasm) to read HDF5
 files and therefore suffers from the following limitations:
 
-- Files bigger than 2GB cannot be opened automatically from the VS Code
-  Explorer. You will need to browse for them manually from the H5Web webview
-  editor when requested.
-- External links cannot be resolved.
+### Files bigger than 2GB cannot be opened automatically from the VS Code Explorer
+
+They can still be viewed with the extension. When opening such a file, the H5Web
+webview editor will request you to to browse and select it manually to open it.
+
+### External links cannot be resolved
+
+This is a limitation of [h5wasm](https://github.com/usnistgov/h5wasm) that the
+extension uses to read HDF5 files.
+
+### Incompatiblity with `snap` packages and Wayland on Linux
+
+When using the extension to view datasets with a VS Code instance installed from
+`snap`, you may encounter an error **Error creating WebGL context**.
+
+This is an issue from VSCode `snap` package that
+[forces the use of `XWayland/X11` instead of `Wayland`](https://github.com/microsoft/vscode/issues/207033).
+Since it can not be worked around, our advice is use another VSCode installation
+instead (e.g. via `apt`).
