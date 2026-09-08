@@ -1,0 +1,14 @@
+.error {
+  margin: 1rem 0;
+  max-width: 45em;
+  color: orangered;
+  font-size: 125%;
+}
+
+.error > p {
+  margin: 0 0 1rem;
+}
+
+.error > p:first-child {
+  font-weight: bold;
+}
