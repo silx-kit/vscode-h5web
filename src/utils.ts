@@ -53,3 +53,13 @@ export function getExportURL(
     return new Blob(); // doesn't matter as long as it's not falsy
   };
 }
+
+export class FetchError extends Error {
+  public constructor(
+    public readonly status: number,
+    public readonly statusText: string,
+  ) {
+    super();
+    this.name = 'FetchError';
+  }
+}

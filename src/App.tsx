@@ -1,8 +1,11 @@
 import { useEventListener } from '@react-hookz/web';
 import { Suspense, useEffect, useState } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
+import { clear } from 'suspend-react';
 
 import { type FileInfo, type Message, MessageType } from '../extension/models';
+import styles from './App.module.css';
+import ErrorFallback from './ErrorFallback';
 import StandaloneViewer from './StandaloneViewer';
 import Viewer from './Viewer';
 import { vscode } from './vscode-api';
@@ -48,11 +51,13 @@ function App() {
 
   return (
     <ErrorBoundary
-      fallbackRender={({ error }) => (
-        <p>{error instanceof Error ? error.message : 'Unknown error'}</p>
-      )}
+      FallbackComponent={ErrorFallback}
+      resetKeys={[fileInfo]}
+      onError={() => {
+        clear([fileInfo]); // clear suspend cache
+      }}
     >
-      <Suspense fallback={<>Loading...</>}>
+      <Suspense fallback={<p className={styles.loading}>Loading...</p>}>
         <Viewer fileInfo={fileInfo} />
       </Suspense>
     </ErrorBoundary>
