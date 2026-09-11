@@ -5,6 +5,7 @@
   scrollbar-color: unset; /* https://github.com/microsoft/vscode/issues/213045 */
 }
 
-#root {
+#root,
+[data-fill-height] {
   height: 100vh;
 }
