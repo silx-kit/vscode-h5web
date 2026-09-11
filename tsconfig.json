@@ -4,6 +4,7 @@
     "moduleResolution": "bundler",
     "target": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
+    "types": [],
     "jsx": "react-jsx",
     "allowJs": true,
     "skipLibCheck": true,
@@ -21,5 +22,5 @@
     "useDefineForClassFields": true,
     "useUnknownInCatchVariables": true
   },
-  "include": ["*", "src", "extension"]
+  "include": ["*", "extension"]
 }
