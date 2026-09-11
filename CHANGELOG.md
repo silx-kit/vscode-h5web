@@ -9,6 +9,7 @@
 - 🐛 Stop leaving a copy of every file opened from the explorer in VS Code's
   webview cache, where copies accumulated with no size limit and were never
   evicted
+- 🐛 Fix sidebar collapsing when switching from a text editor in VS Code 1.126+
 
 ## [v0.2.2](https://github.com/silx-kit/vscode-h5web/compare/v0.2.1...v0.2.2)
 

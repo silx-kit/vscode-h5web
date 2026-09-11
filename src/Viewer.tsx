@@ -4,6 +4,7 @@ import { suspend } from 'suspend-react';
 
 import { type FileInfo } from '../extension/models.js';
 import { FetchError, getExportURL, getPlugin } from './utils';
+import WidthGuard from './WidthGuard.js';
 
 interface Props {
   fileInfo: FileInfo;
@@ -31,7 +32,9 @@ function Viewer(props: Props) {
       getExportURL={getExportURL}
       getPlugin={getPlugin}
     >
-      <App />
+      <WidthGuard>
+        <App />
+      </WidthGuard>
     </H5WasmBufferProvider>
   );
 }
