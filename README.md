@@ -86,3 +86,10 @@ This is an issue from VSCode `snap` package that
 [forces the use of `XWayland/X11` instead of `Wayland`](https://github.com/microsoft/vscode/issues/207033).
 Since it can not be worked around, our advice is use another VSCode installation
 instead (e.g. via `apt`).
+
+## Configuration
+
+### `h5web.colorScheme`
+
+Specifies whether to use a light or dark color scheme. By default, H5Web follows
+VS Code's theme.

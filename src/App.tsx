@@ -36,9 +36,13 @@ function App() {
     return <p>File does not exist</p>;
   }
 
+  const { colorScheme } = document.body.dataset;
+  const disableDarkMode = colorScheme !== 'system';
+
   if (fileInfo.size >= MAX_SIZE_IN_BYTES) {
     return (
       <StandaloneViewer
+        disableDarkMode={disableDarkMode}
         customMessage={
           <p>
             File is too large to be opened from the explorer (max 2 GB). Please
@@ -58,7 +62,7 @@ function App() {
       }}
     >
       <Suspense fallback={<p className={styles.loading}>Loading...</p>}>
-        <Viewer fileInfo={fileInfo} />
+        <Viewer fileInfo={fileInfo} disableDarkMode={disableDarkMode} />
       </Suspense>
     </ErrorBoundary>
   );
