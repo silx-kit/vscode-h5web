@@ -51,7 +51,29 @@
         ],
         "priority": "option"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "H5Web",
+      "properties": {
+        "h5web.colorScheme": {
+          "description": "Specifies whether to use a light or dark color scheme. By default, follow VS Code's theme. Alternatively, follow the operating system's scheme or force a specific scheme.",
+          "type": "string",
+          "default": "vscode",
+          "enum": [
+            "vscode",
+            "system",
+            "light",
+            "dark"
+          ],
+          "enumDescriptions": [
+            "Follow VS Code's theme",
+            "Follow the system's color scheme",
+            "Use a light color scheme",
+            "Use a dark color scheme"
+          ]
+        }
+      }
+    }
   },
   "main": "./out/main.js",
   "scripts": {

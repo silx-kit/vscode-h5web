@@ -8,10 +8,11 @@ import WidthGuard from './WidthGuard.js';
 
 interface Props {
   fileInfo: FileInfo;
+  disableDarkMode: boolean;
 }
 
 function Viewer(props: Props) {
-  const { fileInfo } = props;
+  const { fileInfo, disableDarkMode } = props;
 
   const buffer = suspend(async () => {
     // Make a range request so that VS Code's webview service worker doesn't keep a copy of it
@@ -33,7 +34,7 @@ function Viewer(props: Props) {
       getPlugin={getPlugin}
     >
       <WidthGuard>
-        <App />
+        <App disableDarkMode={disableDarkMode} />
       </WidthGuard>
     </H5WasmBufferProvider>
   );

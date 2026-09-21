@@ -36,9 +36,16 @@ function App() {
     return <p>File does not exist</p>;
   }
 
+  /* Configured color scheme is passed to webview via `data-color-scheme` attribute.
+   * If "system", let H5Web's default behaviour kick in (i.e. `prefer-color-scheme: dark`).
+   * Otherwise, take over control of the color scheme with CSS. */
+  const { colorScheme } = document.body.dataset;
+  const disableDarkMode = colorScheme !== 'system';
+
   if (fileInfo.size >= MAX_SIZE_IN_BYTES) {
     return (
       <StandaloneViewer
+        disableDarkMode={disableDarkMode}
         customMessage={
           <p>
             File is too large to be opened from the explorer (max 2 GB). Please
@@ -58,7 +65,7 @@ function App() {
       }}
     >
       <Suspense fallback={<p className={styles.loading}>Loading...</p>}>
-        <Viewer fileInfo={fileInfo} />
+        <Viewer fileInfo={fileInfo} disableDarkMode={disableDarkMode} />
       </Suspense>
     </ErrorBoundary>
   );
