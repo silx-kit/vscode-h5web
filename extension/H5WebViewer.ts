@@ -143,6 +143,10 @@ export default class H5WebViewer implements CustomReadonlyEditorProvider {
       'worker-src blob:', // for H5WasmLocalFileProvider's inline worker
     ];
 
+    const colorScheme = workspace
+      .getConfiguration('h5web')
+      .get('colorScheme', 'vscode');
+
     return `
 			<!DOCTYPE html>
 			<html lang="en">
@@ -158,7 +162,7 @@ export default class H5WebViewer implements CustomReadonlyEditorProvider {
         <script type="module" src="${jsUri.toString()}"></script>
         <link rel="stylesheet" href="${cssUri.toString()}">
 			</head>
-			<body>
+			<body data-color-scheme=${colorScheme}>
 				<div id="root"></div>
 			</body>
 			</html>`;

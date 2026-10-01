@@ -5,6 +5,9 @@
 - 🧩 Open `.nde` files in H5Web by default
 - ✨ Improve error display when a file is deleted
 - ✨ Reload a file automatically when it is recreated
+- ✨ Follow VS Code's theme by default instead of the operating system's
+- ⚙️ Add `h5web.colorScheme` setting to control the color scheme behaviour
+  (requires reopening H5Web editors)
 - 🐛 Release the previous contents of the file from memory when it is reloaded
 - 🐛 Stop leaving a copy of every file opened from the explorer in VS Code's
   webview cache, where copies accumulated with no size limit and were never
