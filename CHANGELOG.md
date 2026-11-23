@@ -2,6 +2,13 @@
 
 ## dev
 
+## [v0.2.4](https://github.com/silx-kit/vscode-h5web/compare/v0.2.3...v0.2.4)
+
+- ✨ Upgrade H5Web to
+  [v19.0.0](https://github.com/silx-kit/h5web/releases/tag/v19.0.0)
+  - Fix memory leak when provider is unmounted
+- 🛠️ Upgrade to React 19
+
 ## [v0.2.3](https://github.com/silx-kit/vscode-h5web/compare/v0.2.2...v0.2.3)
 
 - 🧩 Open `.nde` files in H5Web by default
