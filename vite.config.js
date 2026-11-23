@@ -1,8 +1,9 @@
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
+import reactFallbackThrottlePlugin from 'vite-plugin-react-fallback-throttle';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), reactFallbackThrottlePlugin()],
   publicDir: false,
   build: {
     sourcemap: 'inline', // can't load external sourcemaps from webviews
