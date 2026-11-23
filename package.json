@@ -87,9 +87,9 @@
     "postversion": "git push && git push --tags"
   },
   "dependencies": {
-    "@h5web/app": "19.0.0-beta.0",
-    "@h5web/h5wasm": "19.0.0-beta.0",
-    "@react-hookz/web": "25.2.0",
+    "@h5web/app": "19.0.0",
+    "@h5web/h5wasm": "19.0.0",
+    "@react-hookz/web": "26.1.0",
     "h5wasm-plugins": "0.3.0",
     "modern-normalize": "3.0.1",
     "react": "19.3.1",
@@ -104,12 +104,12 @@
     "@types/react-dom": "^19.3.0",
     "@types/vscode": "~1.100.0",
     "@types/vscode-webview": "~1.57.5",
-    "@vitejs/plugin-react": "6.1.2",
+    "@vitejs/plugin-react": "6.3.0",
     "esbuild": "0.28.2",
     "eslint": "10.13.0",
-    "prettier": "3.9.10",
+    "prettier": "3.10.1",
     "typescript": "6.0.3",
-    "vite": "8.3.4",
+    "vite": "8.3.8",
     "vite-plugin-react-fallback-throttle": "0.1.3"
   }
 }
