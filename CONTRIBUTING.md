@@ -56,75 +56,34 @@ Code window where the extension is running with <kbd>Ctrl+R</kbd>.
 
 The H5Web extension is published to the
 [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=h5web.vscode-h5web)
-and to the [Open VSX Registry](https://open-vsx.org/). To be able to publish to
-these platforms, you must first follow the steps outlined in the respective
-sections below.
+and to the [Open VSX Registry](https://open-vsx.org/) via GitHub Actions and
+Trusted Publishing.
 
-Before publishing, remember to update the `CHANGELOG` and commit/push all
-changes. Then, run the following command to publish the extension to the VS Code
-Marketplace:
+To release and publish a new version of the extension:
 
-```bash
-pnpm pub <patch|minor|major|x.y.z>
-```
+1. Check out the `main` branch and pull the latest changes.
+1. Make sure your working tree doesn't have uncommitted changes and that the
+   latest commit on `main` has passed the CI.
+1. Update the `CHANGELOG` with the expected version number and commit the
+   change.
+1. Run `pnpm version [ patch | minor | major | <new-version> ]`
 
-This will build the front-end app and the extension, bump the version in
-`package.json` and publish the extension to the Marketplace.
+> The `pnpm version` command:
+>
+> 1. bumps the version in `package.json`;
+> 1. commits and tags the change, and then pushes the new commit and the new tag
+>    to the remote repository (via the `postversion` script).
+>
+> This, in turn, triggers the _Publish_ workflow on the CI, which builds and
+> publishes the extension.
 
-> Do not use the `pnpm publish` command, as this is a reserved command for
-> publishing packages to the NPM repository.
+Once the CI workflow has run successfully:
 
-It will take a few minutes before the new version appears in the Marketplace,
-and it may take a while longer before you're able to update the extension in VS
-Code.
-
-Once you're able to install the new version and confirm that it works as
-expected, proceed with publishing the extension to the Open VSX Registry:
-
-```bash
-pnpm pub:ovsx -p <token>
-```
-
-> Do not pass a version number this time!
-
-Once the extension is published, push the tag created by the first `pnpm pub`
-command, and
-[publish a new release](https://github.com/silx-kit/vscode-h5web/releases/) on
-GitHub to advertise it.
-
-### Visual Studio Marketplace
-
-To be allowed to
-[publish an extension](https://code.visualstudio.com/api/working-with-extensions/publishing-extension)
-to the Visual Studio Marketplace you must have access to both the
-[**H5Web** publisher account](https://marketplace.visualstudio.com/manage/publishers/h5web)
-on the Marketplace and the
-[**H5Web** organisation](https://dev.azure.com/H5Web/) on Azure DevOps, with the
-same Microsoft account.
-
-Then, you have to
-[generate a Personal Access Token](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#get-a-personal-access-token)
-(PAT) on Azure DevOps. Then, use the `vsce` CLI and your PAT to add `h5web` to
-the list of known publishers on your machine:
-
-```bash
-pnpx vsce login h5web
-```
-
-You're now ready to publish the extension to the Visual Studio Marketplace.
-
-### Open VSX Registry
-
-Users of VSCodium and other forks of VSCode may not be able to install
-extensions from the Visual Studio Marketplace. The Open VSX Registry is an
-alternative managed by the Eclipse Foundation.
-
-To be allowed to
-[publish an extension](https://github.com/eclipse/openvsx/wiki/Publishing-Extensions)
-to the registry you must create an [Eclipse](https://www.eclipse.org/) account,
-link it to your Open VSX Registry account, create a personal access token, and
-be added as a member of the `h5web` namespace by an owner of that namespace.
-
-> If the `h5web` namespace no longer has an owner, you may
-> [claim ownership](https://github.com/eclipse/openvsx/wiki/Namespace-Access#how-to-claim-a-namespace)
-> publicly.
+1. Wait for the new version of the extension to become available on the
+   [Visual Studio Marketplace](https://marketplace.visualstudio.com/manage/publishers/h5web/extensions/vscode-h5web/hub?_a=manageExtension).
+1. Update the extension in VS Code and make sure it works as expected — if
+   needed, run _Extentions: Check for Extension Updates_.
+1. Make sure it has also been published to the
+   [Open VSX Registry](https://open-vsx.org/extension/h5web/vscode-h5web).
+1. Write and publish [release notes](https://github.com/silx-kit/h5web/releases)
+   on GitHub.

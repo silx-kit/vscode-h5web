@@ -2,6 +2,10 @@
 
 ## dev
 
+## [v0.2.5](https://github.com/silx-kit/vscode-h5web/compare/v0.2.4...v0.2.5)
+
+- 🛠️ Set up _Trusted Publishing_
+
 ## [v0.2.4](https://github.com/silx-kit/vscode-h5web/compare/v0.2.3...v0.2.4)
 
 - ✨ Upgrade H5Web to

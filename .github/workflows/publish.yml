@@ -1,0 +1,38 @@
+name: Publish
+
+on:
+  push:
+    tags:
+      - v*
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # https://code.visualstudio.com/api/working-with-extensions/publishing-extension#secure-automated-publishing-to-visual-studio-marketplace
+
+    steps:
+      - name: Checkout 🏷️
+        uses: actions/checkout@v6
+
+      - name: Match tag to package version 🧐
+        id: packageVersion
+        uses: geritol/match-tag-to-package-version@0.2.0
+        with:
+          TAG_PREFIX: v
+
+      - name: Install ⚙️
+        uses: ./.github/actions/install
+
+      - name: Build 📦
+        run: pnpm build
+
+      - name: Publish to VS Code Marketplace 🥳
+        run: pnpm --allow-build=@vscode/vsce-sign dlx @vscode/vsce publish --oidc --no-dependencies
+
+      - name: Publish to Open VSX Registry 🥳
+        run: pnpm --allow-build=@vscode/vsce-sign dlx ovsx publish --trusted-publishing --no-dependencies
